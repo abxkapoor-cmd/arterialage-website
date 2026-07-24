@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Solution — Vascora Health</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="/">Vascora<b> Health</b></a>
+    <nav>
+      <a href="/problem">Problem</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/solution" aria-current="page">Solution</a>
+      <a href="/market">Market</a>
+      <a href="/business">Business</a>
+      <a href="/team">Team</a>
+      <a href="/ask">Ask</a>
+    </nav>
+  </div>
+</header>
+
+<div class="crumb">
+  <div class="wrap"><a href="/">← Overview</a><span class="sep">·</span><span class="cur">03 — The solution</span></div>
+</div>
+
+<main>
+
+<section id="solution" style="border-bottom:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The solution</p>
+      <h2>A wearable that watches your arteries — not just your pulse.</h2>
+      <p class="lede">A passive 14-day home wearable that measures arterial stiffness by timing the pulse between two body sites, then applies a machine-learning model to classify HFpEF risk from six physiological features. No cuff, no needle, no clinic visit.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <p class="mono">Early detection</p>
+        <h3>Built for everyone the BP monitor was never designed for</h3>
+        <p>Identifies HFpEF risk early by tracking arterial stiffness through pulse wave velocity — the signal a cuff cannot see, in the patients a cuff was never calibrated for.</p>
+      </div>
+      <div class="card">
+        <p class="mono">Passive, at home</p>
+        <h3>Fourteen days, no clinic visit</h3>
+        <p>Posted out, worn, returned. The device is then cleaned, re-padded, tested and redeployed to the next patient — so one unit screens patient after patient.</p>
+      </div>
+      <div class="card">
+        <p class="mono">Additive, not disruptive</p>
+        <h3>Runs alongside the standard workup</h3>
+        <p>An upstream screening layer that sits before ECG and echo. It does not replace any existing test — which is what makes it adoptable inside a pathway nobody wants to rebuild.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="eyebrow q">The product</p>
+      <h2 class="sub" style="margin:12px 0 12px">Three parts: one hub, two vascular vantage points.</h2>
+      <p class="body" style="margin-bottom:26px">A chest hub carrying the processor, battery and radio, plus two optical PPG sensors — one at the wrist, one at the earlobe. Both share a hardware exposure clock, so the difference in pulse arrival between the two sites can be timed to sub-millisecond precision. That difference is pulse transit time, and from it, pulse wave velocity.</p>
+
+      <div class="diagram">
+        <svg viewBox="0 0 1000 400" role="img" aria-labelledby="dgtitle dgdesc">
+          <title id="dgtitle">Vascora Health wrist-to-ear PPG architecture</title>
+          <desc id="dgdesc">A pulse leaves the heart and travels two arterial paths of different length, arriving first at the earlobe clip and then at the wrist pod. A chest hub, connected to both sensors by a shared hardware clock, runs the machine-learning risk model on board. The difference between the two arrival times is shown as delta t.</desc>
+
+          <!-- ── left panel: topology ─────────────────────── -->
+          <path class="draw-path" d="M 66 204 C 170 152 250 112 392 106" fill="none" stroke="var(--trace)" stroke-width="2"/>
+          <path class="draw-path" d="M 66 216 C 170 272 250 312 392 318" fill="none" stroke="var(--trace)" stroke-width="2"/>
+
+          <circle cx="58" cy="210" r="7" fill="var(--trace)"/>
+          <text class="dg-tick" x="58" y="244" text-anchor="middle">HEART</text>
+
+          <!-- shared-clock links -->
+          <line x1="290" y1="180" x2="392" y2="118" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <line x1="290" y1="244" x2="392" y2="306" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+          <!-- chest hub -->
+          <rect x="176" y="180" width="196" height="64" rx="3" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="1.5"/>
+          <text class="dg-hub" x="274" y="206" text-anchor="middle">CHEST HUB</text>
+          <text class="dg-sub" x="274" y="226" text-anchor="middle">ML MODEL · BLE · BATTERY</text>
+
+          <!-- sensor nodes -->
+          <circle cx="404" cy="106" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
+          <circle cx="404" cy="106" r="4" fill="var(--deep)"/>
+          <text class="dg-label" x="430" y="102">EARLOBE CLIP</text>
+          <text class="dg-sub" x="430" y="122">Transmission mode</text>
+
+          <circle cx="404" cy="318" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
+          <circle cx="404" cy="318" r="4" fill="var(--deep)"/>
+          <text class="dg-label" x="430" y="314">WRIST POD</text>
+          <text class="dg-sub" x="430" y="334">Reflectance mode</text>
+
+          <text class="dg-sub" x="430" y="212">SHARED HARDWARE CLOCK</text>
+
+          <!-- divider -->
+          <line x1="614" y1="56" x2="614" y2="372" stroke="var(--rule)" stroke-width="1"/>
+
+          <!-- ── right panel: timing readout ──────────────── -->
+          <text class="dg-tick" x="656" y="76">TIMING READOUT</text>
+
+          <text class="dg-tick" x="656" y="142">EAR</text>
+          <path class="draw-path" d="M 656 190 L 690 190 C 704 190 710 182 716 132 C 720 118 730 120 736 144 C 742 164 746 160 754 158 C 762 156 766 168 774 174 C 786 182 796 188 810 190 L 964 190"
+                fill="none" stroke="var(--trace)" stroke-width="1.8" stroke-linejoin="round"/>
+
+          <text class="dg-tick" x="656" y="258">WRIST</text>
+          <path class="draw-path" d="M 656 306 L 760 306 C 774 306 780 298 786 248 C 790 234 800 236 806 260 C 812 280 816 276 824 274 C 832 272 836 284 844 290 C 856 298 866 304 880 306 L 964 306"
+                fill="none" stroke="var(--trace)" stroke-width="1.8" stroke-linejoin="round"/>
+
+          <line x1="717" y1="118" x2="717" y2="336" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+          <line x1="787" y1="118" x2="787" y2="336" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+
+          <line x1="717" y1="352" x2="787" y2="352" stroke="var(--trace)" stroke-width="1.5"/>
+          <path d="M 717 352 l 8 -4 v 8 z" fill="var(--trace)"/>
+          <path d="M 787 352 l -8 -4 v 8 z" fill="var(--trace)"/>
+          <text class="dg-dt" x="752" y="342" text-anchor="middle">Δt</text>
+
+          <text class="dg-sub" x="812" y="357">→ PULSE WAVE VELOCITY</text>
+        </svg>
+
+        <p class="dg-cap">The pulse leaves the heart and travels two arterial paths of unequal length. It reaches the earlobe first and the wrist second; <strong>Δt is that difference</strong>. Timing comes from the shared clock across two optical sensors — there is no ECG channel in this device, and no ECG signal is consumed, duplicated or replaced.</p>
+      </div>
+
+      <div class="cards" style="margin-top:22px">
+        <div class="card">
+          <p class="mono">Chest hub</p>
+          <h3>Where the model runs</h3>
+          <p>Host processor, Bluetooth and battery. The six-feature HFpEF risk classifier runs on board, so the patient wears a screening device rather than a data logger.</p>
+        </div>
+        <div class="card">
+          <p class="mono">Wrist pod</p>
+          <h3>Reflectance mode</h3>
+          <p>Light goes into the tissue and comes back out the same side. Three wavelengths are used — 940 nm infrared penetrates deepest and is least affected by melanin.</p>
+        </div>
+        <div class="card">
+          <p class="mono">Earlobe clip</p>
+          <h3>Transmission mode</h3>
+          <p>Light passes straight through the lobe, giving a cleaner pulse waveform at the site the pulse reaches first. No cuff, no needle, no electrodes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="eyebrow q">The causal chain</p>
+      <h2 class="sub" style="margin:12px 0 26px">Detection to savings, in four links.</h2>
+      <div class="chain">
+        <div class="link"><p class="mono">01</p><h3>Detect HFpEF earlier</h3><p>A passive 14-day home screen flags likely HFpEF patients while they are still in primary care.</p></div>
+        <div class="link"><p class="mono">02</p><h3>Start therapy earlier</h3><p>SGLT2 inhibitors, now recommended for HFpEF in major international guidelines.</p></div>
+        <div class="link"><p class="mono">03</p><h3>~26% fewer hospitalisations</h3><p>The evidenced relative reduction in first heart failure hospitalisation (HR 0.74).</p></div>
+        <div class="link"><p class="mono">04</p><h3>£738–£1,107 released per admission avoided</h3><p>Cash-releasing value to the commissioner. £3,690 gross.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="pagenav">
+  <div class="wrap pagenav-in">
+    <a href="/evidence">← The evidence</a>
+    <a href="/market">Next: Market &amp; value →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fbar">
+      <span>Vascora Health · Imperial College London</span>
+      <span>Pre-seed · UK launch · NHS + private clinics</span>
+    </div>
+    <p class="disclaim">Vascora Health is an investigational device; it is not UKCA-marked and is not available for clinical use. <a href="/sources">Sources &amp; methodology →</a></p>
+  </div>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

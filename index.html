@@ -1,239 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vascora Health — Arterial Stiffness Screening for HFpEF</title>
-
-<style>
-:root{
-  --ground:#F4F7FC;
-  --surface:#FFFFFF;
-  --surface-2:#EDF2FA;
-  --ink:#0A1E3A;
-  --ink-2:#425B7C;
-  --ink-3:#7C90AC;
-  --rule:#DAE3F1;
-  --grid:#E4EBF6;
-  --trace:#1D4ED8;
-  --trace-soft:#E1E9FB;
-  --deep:#0B2A4A;
-  --deep-soft:#E4E9F1;
-  --shadow:0 1px 2px rgba(10,30,58,.05), 0 8px 24px -12px rgba(10,30,58,.14);
-
-  --sans:"Helvetica Neue",Helvetica,Arial,"Segoe UI",sans-serif;
-  --serif:Charter,"Bitstream Charter","Sitka Text",Cambria,Georgia,serif;
-  --mono:ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,monospace;
-
-  --measure:66ch;
-  --pad:clamp(20px,5vw,64px);
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --ground:#050B16; --surface:#0E1B2E; --surface-2:#0A1526;
-    --ink:#EAF1FB; --ink-2:#A9BCD6; --ink-3:#6C82A0;
-    --rule:#1E3350; --grid:#12203A;
-    --trace:#4A8DFF; --trace-soft:#122443;
-    --deep:#38BDF8; --deep-soft:#0B2338;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 28px -14px rgba(0,0,0,.7);
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#050B16; --surface:#0E1B2E; --surface-2:#0A1526;
-  --ink:#EAF1FB; --ink-2:#A9BCD6; --ink-3:#6C82A0;
-  --rule:#1E3350; --grid:#12203A;
-  --trace:#4A8DFF; --trace-soft:#122443;
-  --deep:#38BDF8; --deep-soft:#0B2338;
-  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 28px -14px rgba(0,0,0,.7);
-}
-:root[data-theme="light"]{
-  --ground:#F4F7FC; --surface:#FFFFFF; --surface-2:#EDF2FA;
-  --ink:#0A1E3A; --ink-2:#425B7C; --ink-3:#7C90AC;
-  --rule:#DAE3F1; --grid:#E4EBF6;
-  --trace:#1D4ED8; --trace-soft:#E1E9FB;
-  --deep:#0B2A4A; --deep-soft:#E4E9F1;
-  --shadow:0 1px 2px rgba(10,30,58,.05), 0 8px 24px -12px rgba(10,30,58,.14);
-}
-
-*{box-sizing:border-box}
-body{
-  margin:0;background:var(--ground);color:var(--ink);
-  font-family:var(--serif);font-size:17px;line-height:1.62;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
-}
-::selection{background:var(--trace);color:var(--surface)}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--trace);outline-offset:3px;border-radius:2px}
-
-.wrap{max-width:1120px;margin:0 auto;padding-inline:var(--pad)}
-
-h1,h2,h3,.num{font-family:var(--sans);font-weight:700;letter-spacing:-.028em;text-wrap:balance;margin:0}
-h1{font-size:clamp(2.5rem,6.2vw,4.7rem);line-height:.99}
-h2{font-size:clamp(1.75rem,3.5vw,2.6rem);line-height:1.06}
-h3{font-size:1.02rem;letter-spacing:-.012em;line-height:1.35}
-p{margin:0}
-.lede{font-size:clamp(1.05rem,1.9vw,1.26rem);line-height:1.55;color:var(--ink-2);max-width:var(--measure)}
-.body{color:var(--ink-2);max-width:var(--measure)}
-.small{font-size:.93rem;line-height:1.55;color:var(--ink-2)}
-.eyebrow{font-family:var(--mono);font-size:.685rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--trace)}
-.eyebrow.q{color:var(--ink-3)}
-.mono{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
-.num{font-variant-numeric:tabular-nums;letter-spacing:-.045em;line-height:1}
-em{font-style:italic}
-strong{font-weight:600;color:var(--ink)}
-.sub{font-size:clamp(1.38rem,2.6vw,1.82rem)}
-
-.tagm{
-  display:inline-block;font-family:var(--mono);font-size:.6rem;font-weight:600;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);
-  border:1px solid var(--rule);padding:2px 6px;vertical-align:.18em;margin-left:7px;
-  border-radius:2px;white-space:nowrap;
-}
-
-header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;height:58px}
-.logo{font-family:var(--sans);font-weight:700;letter-spacing:-.03em;font-size:1.05rem}
-.logo b{font-weight:400;color:var(--trace)}
-nav{display:flex;gap:22px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
-nav a{color:var(--ink-3);text-decoration:none;transition:color .15s}
-nav a:hover{color:var(--ink)}
-@media(max-width:900px){nav{display:none}}
-
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}
-.hero::before{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-  background-size:22px 22px;
-  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 62%,transparent 100%);
-  mask-image:linear-gradient(to bottom,#000 0%,#000 62%,transparent 100%);
-  opacity:.75;
-}
-.hero-in{position:relative;padding:clamp(56px,9vw,100px) 0 0}
-.hero h1{margin:20px 0 0;max-width:15ch}
-.hero h1 span{color:var(--trace)}
-.hero .lede{margin-top:24px;font-size:clamp(1.08rem,2.05vw,1.32rem)}
-.hero .kicker{margin-top:16px;font-size:1.02rem;color:var(--ink);max-width:60ch;font-weight:400}
-#wave{display:block;width:100%;height:168px;margin-top:40px}
-
-section{padding:clamp(60px,7.5vw,98px) 0;border-bottom:1px solid var(--rule)}
-.sec-head{display:grid;gap:13px;margin-bottom:42px}
-.sec-head h2{max-width:21ch}
-.sec-head .lede{margin-top:3px}
-.block{margin-top:56px}
-
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.stat{background:var(--surface);padding:26px 22px 24px;display:flex;flex-direction:column;gap:10px}
-.stat .num{font-size:clamp(1.95rem,3.9vw,2.7rem);color:var(--trace)}
-.stat p{font-size:.91rem;line-height:1.45;color:var(--ink-2)}
-
-.cards{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(255px,1fr))}
-.card{background:var(--surface);border:1px solid var(--rule);padding:24px 22px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
-.card p{font-size:.94rem;line-height:1.55;color:var(--ink-2)}
-
-.cascade{border:1px solid var(--rule);background:var(--surface);padding:clamp(20px,3.2vw,34px);overflow-x:auto}
-.cascade-inner{min-width:640px}
-.casc-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.node{padding:18px 16px 16px;border:1px solid var(--rule);background:var(--surface-2)}
-.node.win{border-color:var(--deep);background:var(--deep-soft)}
-.node.late{border-color:var(--trace);background:var(--trace-soft)}
-.node .mono{color:var(--ink-3);margin-bottom:6px}
-.node h3{font-size:.97rem}
-.node p{font-size:.85rem;line-height:1.45;color:var(--ink-2);margin-top:6px}
-.casc-axis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
-.axis-cell{border-top:2px solid var(--rule);padding-top:9px;font-family:var(--mono);font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
-.axis-cell.win{border-top-color:var(--deep);color:var(--deep)}
-.axis-cell.late{border-top-color:var(--trace);color:var(--trace)}
-.casc-note{margin-top:20px;font-size:.95rem;color:var(--ink-2);max-width:var(--measure)}
-
-.diagram{border:1px solid var(--rule);background:var(--surface);padding:clamp(18px,3vw,30px);overflow-x:auto}
-.diagram svg{display:block;width:100%;min-width:660px;height:auto}
-.dg-label{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.12em;fill:var(--ink)}
-.dg-sub{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;fill:var(--ink-3)}
-.dg-tick{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;fill:var(--ink-3)}
-.dg-dt{font-family:var(--sans);font-size:17px;font-weight:700;fill:var(--trace)}
-.dg-hub{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.13em;fill:var(--ink)}
-.dg-cap{margin-top:22px;font-size:.93rem;line-height:1.55;color:var(--ink-2);max-width:var(--measure)}
-
-.chain{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;border:1px solid var(--rule);background:var(--surface);overflow:hidden}
-.link{flex:1 1 200px;padding:22px 20px;display:flex;flex-direction:column;gap:7px;border-right:1px solid var(--rule);min-width:0}
-.link:last-child{border-right:0;background:var(--deep-soft)}
-.link .mono{color:var(--deep);font-weight:600}
-.link h3{font-size:.98rem}
-.link p{font-size:.86rem;line-height:1.45;color:var(--ink-2)}
-@media(max-width:760px){.link{border-right:0;border-bottom:1px solid var(--rule)}}
-
-.pipe{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(238px,1fr))}
-.step{background:var(--surface);padding:24px 22px;display:flex;flex-direction:column;gap:9px}
-.step .idx{font-family:var(--mono);font-size:.71rem;letter-spacing:.13em;color:var(--trace);font-weight:600}
-.step p{font-size:.9rem;line-height:1.5;color:var(--ink-2)}
-
-.split{display:grid;gap:clamp(28px,4vw,52px);grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
-.rows{display:flex;flex-direction:column;border-top:1px solid var(--rule)}
-.row{display:grid;gap:5px;padding:17px 0;border-bottom:1px solid var(--rule)}
-.row h3{font-size:.97rem}
-.row p{font-size:.9rem;line-height:1.5;color:var(--ink-2)}
-
-.tablewrap{overflow-x:auto;border:1px solid var(--rule);background:var(--surface)}
-table{border-collapse:collapse;width:100%;min-width:600px;font-size:.89rem}
-th,td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--rule);vertical-align:top}
-thead th{font-family:var(--mono);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);font-weight:600;background:var(--surface-2);white-space:nowrap}
-tbody td:first-child{font-weight:600;color:var(--ink)}
-tbody tr:last-child td{border-bottom:0}
-td.val{font-family:var(--mono);font-size:.83rem;font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
-.yes{color:var(--deep);font-weight:700}
-.no{color:var(--ink-3)}
-.part{color:var(--ink-2);font-size:.83rem}
-tbody tr.us td{background:var(--surface-2)}
-tbody tr.us td:first-child{color:var(--trace)}
-
-.funnel{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.tier{background:var(--surface);padding:26px 22px;display:flex;flex-direction:column;gap:9px}
-.tier .num{font-size:clamp(1.6rem,3.1vw,2.15rem)}
-.tier:nth-child(1) .num{color:var(--ink-3)}
-.tier:nth-child(2) .num{color:var(--deep)}
-.tier:nth-child(3) .num{color:var(--trace)}
-.tier p{font-size:.89rem;line-height:1.45;color:var(--ink-2)}
-
-.road{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
-.q{background:var(--surface);padding:22px 20px;display:flex;flex-direction:column;gap:9px}
-.q .tag{font-family:var(--mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--surface);background:var(--deep);align-self:flex-start;padding:3px 7px}
-.q:last-child .tag{background:var(--trace)}
-.q h3{font-size:.98rem}
-.q p{font-size:.87rem;line-height:1.45;color:var(--ink-2)}
-
-.team{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(205px,1fr))}
-.person{background:var(--surface);padding:22px 20px}
-.person h3{font-size:1rem;margin-bottom:6px}
-.person p{font-family:var(--mono);font-size:.71rem;line-height:1.5;letter-spacing:.03em;color:var(--ink-3);text-transform:uppercase}
-.person p.inst{color:var(--deep);margin-top:5px}
-.advisors{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:20px}
-.adv{border-left:2px solid var(--deep);padding:4px 0 4px 18px}
-.adv h3{font-size:.98rem}
-.adv p{font-size:.9rem;line-height:1.5;color:var(--ink-2);margin-top:5px}
-
-.close{background:var(--surface);border:1px solid var(--rule);padding:clamp(30px,5vw,58px);box-shadow:var(--shadow)}
-.close h2{max-width:19ch}
-.close .lede{margin-top:18px}
-.cta{display:inline-block;margin-top:28px;font-family:var(--mono);font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:var(--surface);background:var(--trace);padding:13px 22px;text-decoration:none;transition:transform .15s ease,filter .15s ease}
-.cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
-
-footer{padding:38px 0 56px;font-size:.82rem;color:var(--ink-3);font-family:var(--mono);letter-spacing:.03em;line-height:1.7}
-footer .fbar{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-between;align-items:baseline}
-.srcs{margin-top:22px;font-size:.71rem;line-height:1.65;color:var(--ink-3);max-width:82ch}
-
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
-.draw-path{transition:stroke-dashoffset 1.1s cubic-bezier(.4,0,.2,1)}
-
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
 
 <header>
   <div class="wrap bar">
-    <div class="logo">Vascora<b> Health</b></div>
+    <a class="logo" href="/">Vascora<b> Health</b></a>
     <nav>
-      <a href="#stakes">Stakes</a>
-      <a href="#cause">Root cause</a>
-      <a href="#solution">Solution</a>
-      <a href="#value">NHS value</a>
-      <a href="#market">Market</a>
-      <a href="#model">Model</a>
-      <a href="#team">Team</a>
+      <a href="/problem">Problem</a>
+      <a href="/evidence">Evidence</a>
+      <a href="/solution">Solution</a>
+      <a href="/market">Market</a>
+      <a href="/business">Business</a>
+      <a href="/team">Team</a>
+      <a href="/ask">Ask</a>
     </nav>
   </div>
 </header>
@@ -250,415 +35,57 @@ footer .fbar{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-bet
 
 <main>
 
-<section id="stakes">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">The stakes</p>
-      <h2>She thought her blood pressure was normal. Three years later she had heart failure.</h2>
-      <p class="lede">Heart failure with preserved ejection fraction (HFpEF) accounts for roughly half of all heart failure, but diagnosis can take years. The standard tests look for a weak pump. A HFpEF patient's pump looks fine, so they are often reassured and sent away — until they arrive at A&amp;E in crisis.</p>
-    </div>
-
-    <div class="stats">
-      <div class="stat"><span class="num">360–450k</span><p>people in the UK live with HFpEF, with 76,000–95,000 new cases each year.</p></div>
-      <div class="stat"><span class="num">~80%</span><p>of heart failure patients receive their initial diagnosis only after an emergency admission.</p></div>
-      <div class="stat"><span class="num">~50%</span><p>five-year mortality — comparable to many cancers.</p></div>
-      <div class="stat"><span class="num">~26%</span><p>reduction in heart failure hospitalisation from SGLT2 inhibitors — proven, but only in diagnosed patients.</p></div>
-    </div>
-
-    <p class="lede" style="margin-top:32px;font-size:clamp(1.1rem,2.1vw,1.35rem);color:var(--ink)"><strong>The cure exists. The patients exist. What doesn't exist is a way to find them.</strong></p>
-    <p class="small" style="margin-top:10px;max-width:var(--measure)">The warnings were there. The treatment was there. We just couldn't see it.</p>
-  </div>
-</section>
-
-<section id="cause">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">The root cause</p>
-      <h2>Medicine was built for one kind of body. Yours may not be it.</h2>
-      <p class="lede">Standard oscillometric BP monitors — used in virtually every GP surgery in the UK — were calibrated against a single baseline demographic: white males in their 60s. In patients with different arterial geometries and stiffness, these devices systematically misread. A patient can appear to have a normal blood pressure while their arteries tell a completely different story.</p>
-    </div>
-
-    <div class="split">
-      <div>
-        <p class="mono" style="margin-bottom:8px">A pathway designed for the few</p>
-        <div class="rows">
-          <div class="row"><h3>Echocardiography misses HFpEF by design</h3><p>It screens for <em>reduced</em> ejection fraction. And it is the backlogged bottleneck: patients wait an average of 27 days between their first echocardiogram and their first heart failure admission.</p></div>
-          <div class="row"><h3>The gold standard is out of reach</h3><p>Invasive exercise cardiac catheterisation, available at fewer than ten designated UK centres.</p></div>
-          <div class="row"><h3>The main symptom doesn't trigger referral</h3><p>Vague breathlessness rarely escalates. GPs have no tool to separate the "worried well" from the quietly dying.</p></div>
-          <div class="row"><h3>No home-based arterial monitoring exists</h3><p>Nothing in any standard care pathway measures arterial stiffness ambulantly.</p></div>
-        </div>
-      </div>
-      <div>
-        <p class="mono" style="margin-bottom:8px">Who the calibration fails</p>
-        <div class="rows">
-          <div class="row"><h3>Calibrated for</h3><p>White males, age 60+.</p></div>
-          <div class="row"><h3>Fails</h3><p>Women · South Asian · Black · Elderly.</p></div>
-          <div class="row"><h3>1.7×</h3><p>White adults are 1.7 times more likely to meet the diagnostic threshold for HFpEF than Black adults.</p></div>
-        </div>
-        <p class="small" style="margin-top:22px"><strong>Structural bias, baked into the most-used diagnostic tool in primary care</strong> — failing exactly the patients most at risk. Vascora Health closes this gap.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="insight">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">The insight</p>
-      <h2>The warning isn't weight or blood pressure. It's arterial stiffness.</h2>
-      <p class="lede">HFpEF is increasingly understood as a disease of the vasculature, not only the heart muscle. As the large arteries stiffen with vascular ageing, the workload on the heart rises, ventricular–arterial coupling deteriorates, and the heart's ability to fill declines.</p>
-    </div>
-
-    <div class="cascade">
-      <div class="cascade-inner">
-        <div class="casc-row">
-          <div class="node win">
-            <p class="mono">Stage 01</p>
-            <h3>Arterial stiffness rises</h3>
-            <p>Measurable optically, passively, at home. Nothing in the current pathway looks here.</p>
-          </div>
-          <div class="node">
-            <p class="mono">Stage 02</p>
-            <h3>Fluid and weight rise</h3>
-            <p>The first physical consequence. Detectable by a scale — if the patient steps on one.</p>
-          </div>
-          <div class="node">
-            <p class="mono">Stage 03</p>
-            <h3>Symptoms appear</h3>
-            <p>Breathlessness, fatigue. Often dismissed as ageing or deconditioning.</p>
-          </div>
-          <div class="node late">
-            <p class="mono">Stage 04</p>
-            <h3>Emergency admission</h3>
-            <p>The event everyone was trying to prevent — and the point at which 80% of patients are first diagnosed.</p>
-          </div>
-        </div>
-        <div class="casc-axis">
-          <div class="axis-cell win">Our window</div>
-          <div class="axis-cell">Days later</div>
-          <div class="axis-cell late">Today's tools catch it here</div>
-          <div class="axis-cell late">Too late</div>
-        </div>
-      </div>
-      <p class="casc-note">Every tool in the current pathway — the cuff, the scale, the symptom check — measures the consequence. <strong>We measure the cause, continuously.</strong></p>
-    </div>
-
-    <div class="block">
-      <p class="eyebrow q">The evidence</p>
-      <h2 class="sub" style="margin:12px 0 26px">Published, not hypothetical.</h2>
-      <div class="cards">
-        <div class="card">
-          <p class="mono">Correlates with HFpEF</p>
-          <h3>27 studies, 6,626 patients</h3>
-          <p>A meta-analysis found pulse wave velocity correlates significantly with E/e′ and E/A — the echocardiographic markers used to diagnose HFpEF. Higher aortic PWV is associated with increased hospitalisation and cardiovascular mortality.</p>
-        </div>
-        <div class="card">
-          <p class="mono">A treatable disease, now</p>
-          <h3>SGLT2 inhibitors changed the case for early detection</h3>
-          <p>HFpEF had no disease-modifying treatment until recently. Across DELIVER and EMPEROR-Preserved (12,251 participants), SGLT2 inhibitors cut first heart failure hospitalisation by a hazard ratio of 0.74 — roughly 26% — and are now guideline-recommended.</p>
-        </div>
-        <div class="card">
-          <p class="mono">Pre-HFpEF</p>
-          <h3>An earlier phenotype to catch</h3>
-          <p>Pulse wave velocity may identify at-risk intermediate phenotypes before overt disease appears — a screening population no existing tool addresses.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="solution">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">The solution</p>
-      <h2>A wearable that watches your arteries — not just your pulse.</h2>
-      <p class="lede">A passive 14-day home wearable that measures arterial stiffness by timing the pulse between two body sites, then applies a machine-learning model to classify HFpEF risk from six physiological features. No cuff, no needle, no clinic visit.</p>
-    </div>
-
-    <div class="cards">
-      <div class="card">
-        <p class="mono">Early detection</p>
-        <h3>Built for everyone the BP monitor was never designed for</h3>
-        <p>Identifies HFpEF risk early by tracking arterial stiffness through pulse wave velocity — the signal a cuff cannot see, in the patients a cuff was never calibrated for.</p>
-      </div>
-      <div class="card">
-        <p class="mono">Passive, at home</p>
-        <h3>Fourteen days, no clinic visit</h3>
-        <p>Posted out, worn, returned. The device is then cleaned, re-padded, tested and redeployed to the next patient — so one unit screens patient after patient.</p>
-      </div>
-      <div class="card">
-        <p class="mono">Additive, not disruptive</p>
-        <h3>Runs alongside the standard workup</h3>
-        <p>An upstream screening layer that sits before ECG and echo. It does not replace any existing test — which is what makes it adoptable inside a pathway nobody wants to rebuild.</p>
-      </div>
-    </div>
-
-    <div class="block">
-      <p class="eyebrow q">The product</p>
-      <h2 class="sub" style="margin:12px 0 12px">Three parts: one hub, two vascular vantage points.</h2>
-      <p class="body" style="margin-bottom:26px">A chest hub carrying the processor, battery and radio, plus two optical PPG sensors — one at the wrist, one at the earlobe. Both share a hardware exposure clock, so the difference in pulse arrival between the two sites can be timed to sub-millisecond precision. That difference is pulse transit time, and from it, pulse wave velocity.</p>
-
-      <div class="diagram">
-        <svg viewBox="0 0 1000 400" role="img" aria-labelledby="dgtitle dgdesc">
-          <title id="dgtitle">Vascora Health wrist-to-ear PPG architecture</title>
-          <desc id="dgdesc">A pulse leaves the heart and travels two arterial paths of different length, arriving first at the earlobe clip and then at the wrist pod. A chest hub, connected to both sensors by a shared hardware clock, runs the machine-learning risk model on board. The difference between the two arrival times is shown as delta t.</desc>
-
-          <!-- ── left panel: topology ─────────────────────── -->
-          <path class="draw-path" d="M 66 204 C 170 152 250 112 392 106" fill="none" stroke="var(--trace)" stroke-width="2"/>
-          <path class="draw-path" d="M 66 216 C 170 272 250 312 392 318" fill="none" stroke="var(--trace)" stroke-width="2"/>
-
-          <circle cx="58" cy="210" r="7" fill="var(--trace)"/>
-          <text class="dg-tick" x="58" y="244" text-anchor="middle">HEART</text>
-
-          <!-- shared-clock links -->
-          <line x1="290" y1="180" x2="392" y2="118" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
-          <line x1="290" y1="244" x2="392" y2="306" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
-
-          <!-- chest hub -->
-          <rect x="176" y="180" width="196" height="64" rx="3" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="1.5"/>
-          <text class="dg-hub" x="274" y="206" text-anchor="middle">CHEST HUB</text>
-          <text class="dg-sub" x="274" y="226" text-anchor="middle">ML MODEL · BLE · BATTERY</text>
-
-          <!-- sensor nodes -->
-          <circle cx="404" cy="106" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
-          <circle cx="404" cy="106" r="4" fill="var(--deep)"/>
-          <text class="dg-label" x="430" y="102">EARLOBE CLIP</text>
-          <text class="dg-sub" x="430" y="122">Transmission mode</text>
-
-          <circle cx="404" cy="318" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
-          <circle cx="404" cy="318" r="4" fill="var(--deep)"/>
-          <text class="dg-label" x="430" y="314">WRIST POD</text>
-          <text class="dg-sub" x="430" y="334">Reflectance mode</text>
-
-          <text class="dg-sub" x="430" y="212">SHARED HARDWARE CLOCK</text>
-
-          <!-- divider -->
-          <line x1="614" y1="56" x2="614" y2="372" stroke="var(--rule)" stroke-width="1"/>
-
-          <!-- ── right panel: timing readout ──────────────── -->
-          <text class="dg-tick" x="656" y="76">TIMING READOUT</text>
-
-          <text class="dg-tick" x="656" y="142">EAR</text>
-          <path class="draw-path" d="M 656 190 L 690 190 C 704 190 710 182 716 132 C 720 118 730 120 736 144 C 742 164 746 160 754 158 C 762 156 766 168 774 174 C 786 182 796 188 810 190 L 964 190"
-                fill="none" stroke="var(--trace)" stroke-width="1.8" stroke-linejoin="round"/>
-
-          <text class="dg-tick" x="656" y="258">WRIST</text>
-          <path class="draw-path" d="M 656 306 L 760 306 C 774 306 780 298 786 248 C 790 234 800 236 806 260 C 812 280 816 276 824 274 C 832 272 836 284 844 290 C 856 298 866 304 880 306 L 964 306"
-                fill="none" stroke="var(--trace)" stroke-width="1.8" stroke-linejoin="round"/>
-
-          <line x1="717" y1="118" x2="717" y2="336" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-          <line x1="787" y1="118" x2="787" y2="336" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-
-          <line x1="717" y1="352" x2="787" y2="352" stroke="var(--trace)" stroke-width="1.5"/>
-          <path d="M 717 352 l 8 -4 v 8 z" fill="var(--trace)"/>
-          <path d="M 787 352 l -8 -4 v 8 z" fill="var(--trace)"/>
-          <text class="dg-dt" x="752" y="342" text-anchor="middle">Δt</text>
-
-          <text class="dg-sub" x="812" y="357">→ PULSE WAVE VELOCITY</text>
-        </svg>
-
-        <p class="dg-cap">The pulse leaves the heart and travels two arterial paths of unequal length. It reaches the earlobe first and the wrist second; <strong>Δt is that difference</strong>. Timing comes from the shared clock across two optical sensors — there is no ECG channel in this device, and no ECG signal is consumed, duplicated or replaced.</p>
-      </div>
-
-      <div class="cards" style="margin-top:22px">
-        <div class="card">
-          <p class="mono">Chest hub</p>
-          <h3>Where the model runs</h3>
-          <p>Host processor, Bluetooth and battery. The six-feature HFpEF risk classifier runs on board, so the patient wears a screening device rather than a data logger.</p>
-        </div>
-        <div class="card">
-          <p class="mono">Wrist pod</p>
-          <h3>Reflectance mode</h3>
-          <p>Light goes into the tissue and comes back out the same side. Three wavelengths are used — 940 nm infrared penetrates deepest and is least affected by melanin.</p>
-        </div>
-        <div class="card">
-          <p class="mono">Earlobe clip</p>
-          <h3>Transmission mode</h3>
-          <p>Light passes straight through the lobe, giving a cleaner pulse waveform at the site the pulse reaches first. No cuff, no needle, no electrodes.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="block">
-      <p class="eyebrow q">The causal chain</p>
-      <h2 class="sub" style="margin:12px 0 26px">Detection to savings, in four links.</h2>
-      <div class="chain">
-        <div class="link"><p class="mono">01</p><h3>Detect HFpEF earlier</h3><p>A passive 14-day home screen flags likely HFpEF patients while they are still in primary care.</p></div>
-        <div class="link"><p class="mono">02</p><h3>Start therapy earlier</h3><p>SGLT2 inhibitors, now recommended for HFpEF in major international guidelines.</p></div>
-        <div class="link"><p class="mono">03</p><h3>~26% fewer hospitalisations</h3><p>The evidenced relative reduction in first heart failure hospitalisation (HR 0.74).</p></div>
-        <div class="link"><p class="mono">04</p><h3>£738–£1,107 released per admission avoided</h3><p>Cash-releasing value to the commissioner. £3,690 gross.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="value">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">NHS value</p>
-      <h2>The cost of finding heart failure too late.</h2>
-      <p class="lede">Heart failure consumes around 2% of the entire NHS budget and 5% of all emergency admissions. Most of that bill is paid for late — at the latest and most expensive possible point of detection.</p>
-    </div>
-
-    <div class="stats">
-      <div class="stat"><span class="num">£2bn</span><p>annual NHS cost of heart failure care, most of it via emergency attendance, prolonged stays and readmissions.</p></div>
-      <div class="stat"><span class="num">£3,690</span><p>average cost of an emergency heart failure admission.</p></div>
-      <div class="stat"><span class="num">£738–1,107</span><p>genuinely cash-releasing per avoided admission — the marginal 20–30% the NHS itself uses in costing guidance.</p></div>
-      <div class="stat"><span class="num">862,470</span><p>heart failure bed days in 2018/19. Median stay is 8 days, roughly double the average across all diagnoses.</p></div>
-    </div>
-    <p class="small" style="margin-top:16px;max-width:var(--measure)">We quote both figures deliberately. NHS reference costs are full-absorption averages, so avoiding one admission does not release the whole £3,690 — fixed overheads remain. The ~£920 midpoint is the cash the system actually banks.</p>
-
-    <div class="block">
-      <p class="eyebrow q">Where it comes from</p>
-      <h2 class="sub" style="margin:12px 0 26px">Earlier diagnosis, protected capacity, fewer readmissions.</h2>
-      <div class="pipe">
-        <div class="step"><span class="idx">01 — Upstream diagnosis</span><p>Flagging likely HFpEF patients in primary care means some are treated before reaching the front door.</p></div>
-        <div class="step"><span class="idx">02 — Protecting echo capacity</span><p>Raising pre-test probability sends scarce echocardiography to the patients most likely to actually have HFpEF.</p></div>
-        <div class="step"><span class="idx">03 — Reducing readmissions</span><p>22.3% of heart failure patients are readmitted within 30 days. Earlier guideline-directed therapy attacks that directly.</p></div>
-      </div>
-      <p class="small" style="margin-top:20px;max-width:var(--measure)">Modelled at a 10% upstream shift in currently-late diagnoses: roughly 6,000–7,600 admissions avoided per year, worth ~£4.5m–£8.4m. <span class="tagm">Modelled — not a forecast</span></p>
-    </div>
-  </div>
-</section>
-
-<section id="market">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Market</p>
-      <h2>Built bottom-up, as a narrowing funnel.</h2>
-      <p class="lede">The total patient population is not our market. The credible version narrows to the patients already inside a diagnostic pathway, with a budget attached and a bottleneck in front of them.</p>
-    </div>
-
-    <div class="funnel">
-      <div class="tier"><p class="mono">TAM · the whole condition</p><span class="num">360–450k</span><p>People living with HFpEF in the UK, from a total heart failure prevalence of 920,616 cases. Around 190,000 new heart failure cases a year, of which HFpEF is 40–50%.</p></div>
-      <div class="tier"><p class="mono">SAM · already being investigated</p><span class="num">In-pathway</span><p>Patients presenting to primary care with suspected heart failure who are already receiving an NT-proBNP test and awaiting an echocardiogram. Already in a pathway, already funded, already queued.</p></div>
-      <div class="tier"><p class="mono">SOM · measured in sites</p><span class="num">Pilot ICBs</span><p>A defined number of Integrated Care Boards or Community Diagnostic Centres, multiplied by episodes per site per year. Sites, not population — that is the number a forecast can be built on.</p></div>
-    </div>
-
-    <p class="small" style="margin-top:20px;max-width:var(--measure)"><strong>Our beachhead:</strong> symptomatic suspected-heart-failure patients already waiting for an echocardiogram. Chosen because there is a defined clinical bottleneck, a defined budget holder, and an existing test to attach to. Broad population screening is a much larger market and a much worse first sale.</p>
-  </div>
-</section>
-
-<section id="differentiation">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Differentiation</p>
-      <h2>Everyone else measures one thing, once. We measure two, continuously.</h2>
-      <p class="lede">Our price is validated by what the NHS already buys. The Zio XT is structurally the same product shape as ours — a 14-day, one-patient-at-a-time, AI-analysed cardiac diagnostic sold as a service — and the NHS already pays £229–265 for it. We are priced at the established rate for this category, not above it.</p>
-    </div>
-
-    <div class="tablewrap">
-      <table>
-        <thead><tr><th>Comparator</th><th>What it is</th><th>Price</th><th>Model</th></tr></thead>
-        <tbody>
-          <tr><td>iRhythm Zio XT</td><td>14-day single-use cardiac patch with AI analysis and clinician report; NICE-recommended, used across NHS trusts</td><td class="val">£229–265 / patient</td><td>Per-episode service</td></tr>
-          <tr class="us"><td>Vascora Health</td><td>14-day dual-site wearable, six-feature HFpEF risk model, AF detection</td><td class="val">~£250 / episode</td><td>Per-episode service</td></tr>
-          <tr><td>FreeStyle Libre 2</td><td>14-day glucose sensor; reader amortised over ~3 years</td><td class="val">~£35 / sensor</td><td>Razor / blade</td></tr>
-          <tr><td>SphygmoCor XCEL</td><td>Clinic arterial stiffness system; single 60-second measurement</td><td class="val">Five-figure capital</td><td>One-off capital purchase</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="small" style="margin-top:20px;max-width:var(--measure)">We do not compete on price per test. SphygmoCor is a single 60-second clinic snapshot from a five-figure capital box; we replace that with a continuous 14-day ambulatory read, delivered as a pay-per-use service.</p>
-
-    <div class="block">
-      <p class="eyebrow q">Defensibility</p>
-      <h2 class="sub" style="margin:12px 0 26px">What is hard to copy.</h2>
-      <div class="cards">
-        <div class="card"><p class="mono">Architecture</p><h3>Two synchronised sites</h3><p>Pulse transit time requires two sites sharing a hardware clock. A single-site patch cannot produce it.</p></div>
-        <div class="card"><p class="mono">Model</p><h3>Six-feature risk classifier</h3><p>Combining six features into a single HFpEF risk output is the core IP, and the reason we can hold a Zio-level price rather than a commodity-sensor price.</p></div>
-        <div class="card"><p class="mono">Evidence</p><h3>Clinical dataset and Class IIa barrier</h3><p>Consumer wearables do single-site rhythm detection, not two-site pulse wave velocity, and are not regulated for HFpEF screening.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="model">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Business model</p>
-      <h2>The device is the razor. Each 14-day screen is the blade.</h2>
-      <p class="lede">Pay-per-episode: we supply the device, the customer pays roughly £250 per 14-day patient screen. Because each device is cleaned and redeployed to the next patient, one unit earns revenue repeatedly rather than once.</p>
-    </div>
-
-    <div class="cards">
-      <div class="card"><p class="mono">Unit economics</p><h3>A prototype costs ~£300; one episode repays it</h3><p>Even at a conservative 10 uses a year, one device returns over £2,000 of annual contribution at an estimated ~85% margin. <span class="tagm">Working assumption</span></p></div>
-      <div class="card"><p class="mono">Why the NHS prefers this</p><h3>Operational spend, not capital</h3><p>Per-episode fees are opex, not capex — faster budget approval in a chronically capital-constrained system.</p></div>
-      <div class="card"><p class="mono">Why it compounds</p><h3>No new logo needed to grow</h3><p>Each device is cleaned and redeployed to the next patient, so revenue grows with usage, not with new sales.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="route">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Route to market</p>
-      <h2>Regulatory clearance is not reimbursement. We do not wait for the second one.</h2>
-      <p class="lede">Products with full regulatory approval, positive clinical data and even NICE guidance can spend years largely unused in the NHS, because the system has no mechanism to pay for them. Our route starts earning before national reimbursement exists.</p>
-    </div>
-
-    <div class="road">
-      <div class="q"><span class="tag">Stage 1</span><h3>Private clinics</h3><p>Self-pay and private cardiology require only a UKCA mark. First revenue, first real-world data, no tariff dependency.</p></div>
-      <div class="q"><span class="tag">Stage 2</span><h3>Local NHS pilots</h3><p>Sell to an ICB or Community Diagnostic Centre from existing local budgets. This stage exists to generate the outcome data Stage 3 requires.</p></div>
-      <div class="q"><span class="tag">Stage 3</span><h3>National funding routes</h3><p>The MedTech Funding Mandate covers NICE-approved technologies that are cost-saving within three years and under £20m budget impact — our modelled £4.5–8.4m sits comfortably below that cap.</p></div>
-      <div class="q"><span class="tag">The buyer</span><h3>The ICB commissioner</h3><p>Commissioners hold the budget that pays for emergency admissions, so they bank the saving when admissions are avoided. The incentive aligns exactly.</p></div>
-    </div>
-
-    <div class="block">
-      <div class="split">
-        <div>
-          <p class="eyebrow q">Regulatory</p>
-          <h2 class="sub" style="margin:12px 0 20px">Class IIa, UKCA — a known path.</h2>
-          <p class="body">Pulse-oximeter class (ISO 80601-2-61). MHRA registration plus conformity assessment by a UK Approved Body — typically 6–10 months from a complete submission. The real cost is the ISO 13485 quality system, not the registration fee.</p>
-        </div>
-        <div>
-          <p class="eyebrow q">Stage, stated plainly</p>
-          <h2 class="sub" style="margin:12px 0 20px">What we have proved, and what we have not.</h2>
-          <div class="rows">
-            <div class="row"><h3>Proved — the physiology</h3><p>Arterial stiffness is an early vascular signal of the same disease process, correlated with the echo markers used to diagnose HFpEF.</p></div>
-            <div class="row"><h3>Open — sub-millisecond two-site timing</h3><p>Our first validation milestone. Not novel physics — the risk is execution, not invention.</p></div>
-            <div class="row"><h3>Design-mitigated — skin tone</h3><p>Three wavelengths mitigate melanin effects; Monk-scale cross-skin-tone validation is mandated in our own specification.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="team">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Our team</p>
-      <h2>Turning world-leading research into life-saving tech.</h2>
-    </div>
-    <div class="team">
-      <div class="person"><h3>Pranav Sharma</h3><p>MEng Electrical &amp; Information Engineering</p><p class="inst">Imperial College London</p></div>
-      <div class="person"><h3>Abhi Kapoor</h3><p>MEng Electrical &amp; Electronic Engineering</p><p class="inst">Imperial College London</p></div>
-      <div class="person"><h3>Krish Thakrar</h3><p>MEng Mechanical Engineering</p><p class="inst">Imperial College London</p></div>
-      <div class="person"><h3>Anjali Ketan</h3><p>Medical Biosciences with Management</p><p class="inst">Imperial College London</p></div>
-      <div class="person"><h3>Joshika Manikandan</h3><p>Chemistry</p><p class="inst">Imperial College London</p></div>
-    </div>
-
-    <p class="mono" style="margin-top:36px">Advisory faculty · Imperial College London</p>
-    <div class="advisors">
-      <div class="adv"><h3>Dr. Kim H. Parker</h3><p>Emeritus Professor, Department of Bioengineering. Pioneer of wave-intensity analysis — the physics behind our approach.</p></div>
-      <div class="adv"><h3>Dr. Sonali Parbhoo</h3><p>Assistant Professor and leader of the AI for Actionable Impact Lab. Leading global research on interpretable AI models for clinical decision-making.</p></div>
-    </div>
-  </div>
-</section>
-
 <section style="border-bottom:0">
   <div class="wrap">
-    <div class="close">
-      <p class="eyebrow">The ask · Pre-seed</p>
-      <h2 style="margin-top:14px">Raising to take Vascora Health from MVP to first paid pilots.</h2>
-      <p class="lede">The NHS is not short of heart failure treatment. It is short of timely heart failure detection. That is the gap we sell into — and this round funds the two-site timing validation, the quality system, and the first clinical pilot that turns the evidence base into an NHS purchase order.</p>
-      <div class="road" style="margin-top:32px">
-        <div class="q"><span class="tag">Engineering</span><h3>Two-site timing validation</h3><p>Demonstrating sub-millisecond cross-site timing on our own hardware — the first milestone everything else depends on.</p></div>
-        <div class="q"><span class="tag">Quality</span><h3>ISO 13485 design freeze</h3><p>A locked, controlled design that a UKCA technical file can be built on rather than rebuilt from.</p></div>
-        <div class="q"><span class="tag">Clinical</span><h3>Ethics-approved pilot</h3><p>An ambulatory cohort against reference PWV standards, including Monk-scale cross-skin-tone validation.</p></div>
-        <div class="q"><span class="tag">Commercial</span><h3>First paid pilot</h3><p>Private-clinic revenue, then an ICB or Community Diagnostic Centre running episodes on local budgets.</p></div>
-      </div>
+    <div class="sec-head">
+      <p class="eyebrow">Explore</p>
+      <h2>Seven things, one page each.</h2>
+      <p class="lede">The full case for Vascora Health, broken into focused pages — problem, evidence, product, market, model, team, and the ask.</p>
+    </div>
+
+    <div class="menu-grid">
+      <a class="menu-card" href="/problem">
+        <p class="mono">01 — The problem</p>
+        <h3>She thought her blood pressure was normal. Three years later she had heart failure.</h3>
+        <p>Why HFpEF stays invisible to today's tools, and who the standard BP monitor fails.</p>
+        <span class="go">Read more →</span>
+      </a>
+      <a class="menu-card" href="/evidence">
+        <p class="mono">02 — The evidence</p>
+        <h3>The warning isn't weight or blood pressure. It's arterial stiffness.</h3>
+        <p>The cascade from arterial stiffness to emergency admission, and the published evidence behind it.</p>
+        <span class="go">Read more →</span>
+      </a>
+      <a class="menu-card" href="/solution">
+        <p class="mono">03 — The solution</p>
+        <h3>A wearable that watches your arteries — not just your pulse.</h3>
+        <p>The product: chest hub, wrist pod, earlobe clip — and the causal chain to savings.</p>
+        <span class="go">Read more →</span>
+      </a>
+      <a class="menu-card" href="/market">
+        <p class="mono">04 — Market &amp; value</p>
+        <h3>The cost of finding heart failure too late.</h3>
+        <p>NHS cost data, and the market sized bottom-up as a narrowing funnel.</p>
+        <span class="go">Read more →</span>
+      </a>
+      <a class="menu-card" href="/business">
+        <p class="mono">05 — Business model</p>
+        <h3>Everyone else measures one thing, once. We measure two, continuously.</h3>
+        <p>Pricing, defensibility, unit economics, and the regulated route to market.</p>
+        <span class="go">Read more →</span>
+      </a>
+      <a class="menu-card" href="/team">
+        <p class="mono">06 — Team</p>
+        <h3>Turning world-leading research into life-saving tech.</h3>
+        <p>The founding team and Imperial College London advisory faculty.</p>
+        <span class="go">Read more →</span>
+      </a>
+      <a class="menu-card" href="/ask">
+        <p class="mono">07 — The ask</p>
+        <h3>Raising to take Vascora Health from MVP to first paid pilots.</h3>
+        <p>Pre-seed, and what this round funds.</p>
+        <span class="go">Read more →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -671,92 +98,10 @@ footer .fbar{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-bet
       <span>Vascora Health · Imperial College London</span>
       <span>Pre-seed · UK launch · NHS + private clinics</span>
     </div>
-    <p class="srcs">Sources: UK heart failure prevalence study (920,616 cases; ~190,000 new cases/year); NHS England and Savarese &amp; Lund 2017 (HFpEF 40–50% of diagnoses); Roche / Pumping Marvellous, <em>The Heart Failure Challenge</em> (£3,690 average admission; 74.8% first diagnosed in hospital; ~2% of NHS budget, 5% of unplanned admissions); National Heart Failure Audit (862,470 bed days 2018/19; 27-day echo-to-admission interval; median 8-day stay); Tribouilloy et al., <em>European Heart Journal</em> 2008 (five-year mortality); meta-analysis of 27 studies, 6,626 patients (PWV vs E/e′ and E/A); ESC Heart Failure (aortic PWV and HF hospitalisation; pre-HFpEF phenotypes); EMPEROR-Preserved and DELIVER pre-specified meta-analysis, 12,251 participants (HR 0.74); NHS Cost &amp; Tariff Calculator, National Cost Collection 2024/25 (20–30% marginal cash-releasing share); NHS England Marginal Rate Emergency Rule; NICE / pharmaphorum and SHTG (Zio XT £229–265); NHS Drug Tariff (FreeStyle Libre 2); MHRA UKCA guidance; Health Innovation Network (MedTech Funding Mandate criteria). Figures described as modelled or assumed are labelled as such and are not forecasts. Vascora Health is an investigational device; it is not UKCA-marked and is not available for clinical use.</p>
+    <p class="disclaim">Vascora Health is an investigational device; it is not UKCA-marked and is not available for clinical use. <a href="/sources">Sources &amp; methodology →</a></p>
   </div>
 </footer>
 
-<script>
-(function(){
-  var c = document.getElementById('wave');
-  if(!c) return;
-  var ctx = c.getContext('2d');
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var w = 0, h = 0, dpr = 1, phase = 0;
-
-  function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
-
-  function size(){
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    w = c.clientWidth; h = c.clientHeight;
-    c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  // one arterial pressure pulse: systolic upstroke, dicrotic notch, diastolic decay
-  function pulse(t){
-    if(t < 0 || t >= 1) return 0;
-    var sys = Math.exp(-Math.pow((t - 0.13) / 0.075, 2));
-    var dic = 0.34 * Math.exp(-Math.pow((t - 0.34) / 0.085, 2));
-    var run = 0.30 * Math.exp(-t * 3.4);
-    return sys + dic + run;
-  }
-
-  function draw(){
-    ctx.clearRect(0, 0, w, h);
-    var base = h * 0.82, amp = h * 0.60, period = 118;
-
-    ctx.beginPath();
-    for(var x = 0; x <= w; x++){
-      var t = ((x + phase) % period) / period;
-      var y = base - pulse(t) * amp;
-      if(x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-    }
-    ctx.strokeStyle = css('--trace');
-    ctx.lineWidth = 1.6;
-    ctx.lineJoin = 'round';
-    ctx.stroke();
-
-    // fade the leading edge so the trace enters rather than starting abruptly
-    var g = ctx.createLinearGradient(0, 0, w * 0.22, 0);
-    g.addColorStop(0, css('--ground')); g.addColorStop(1, 'transparent');
-    ctx.fillStyle = g;
-    ctx.globalCompositeOperation = 'destination-out';
-    ctx.fillRect(0, 0, w * 0.22, h);
-    ctx.globalCompositeOperation = 'source-over';
-  }
-
-  function loop(){ phase += 0.85; draw(); requestAnimationFrame(loop); }
-
-  size(); draw();
-  window.addEventListener('resize', function(){ size(); draw(); });
-  if(!reduce) requestAnimationFrame(loop);
-})();
-
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce) return;
-
-  document.querySelectorAll('.draw-path').forEach(function(p){
-    var len = p.getTotalLength();
-    p.style.strokeDasharray = len;
-    p.style.strokeDashoffset = len;
-  });
-
-  var targets = document.querySelectorAll('.card, .stat, .node, .step, .tier, .link, .q, .person, .diagram, .chain, .tablewrap');
-  targets.forEach(function(el, i){
-    el.classList.add('reveal');
-    el.style.transitionDelay = (Math.min(i % 6, 5) * 55) + 'ms';
-  });
-
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(!entry.isIntersecting) return;
-      entry.target.classList.add('in');
-      entry.target.querySelectorAll('.draw-path').forEach(function(p){ p.style.strokeDashoffset = '0'; });
-      io.unobserve(entry.target);
-    });
-  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
-
-  targets.forEach(function(el){ io.observe(el); });
-})();
-</script>
+<script src="/app.js"></script>
+</body>
+</html>
