@@ -65,8 +65,15 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--groun
 .logo b{font-weight:400;color:var(--trace)}
 nav{display:flex;gap:26px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
 nav a{color:var(--ink-3);text-decoration:none;transition:color .15s}
-nav a:hover{color:var(--trace)}
+nav a:hover,nav a[aria-current="page"]{color:var(--trace)}
 @media(max-width:720px){nav{display:none}}
+
+.crumb{padding:20px 0;border-bottom:1px solid var(--rule)}
+.crumb .wrap{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.crumb a{color:var(--ink-3);text-decoration:none}
+.crumb a:hover{color:var(--trace)}
+.crumb .sep{color:var(--rule)}
+.crumb .cur{color:var(--ink)}
 
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}
 .hero-in{position:relative;padding:clamp(72px,13vw,140px) 0 0}
