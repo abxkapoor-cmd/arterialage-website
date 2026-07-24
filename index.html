@@ -1,20 +1,20 @@
-<title>ArterialAge — Arterial Stiffness Screening for HFpEF</title>
+<title>Vascora Health — Arterial Stiffness Screening for HFpEF</title>
 
 <style>
 :root{
-  --ground:#F5F1EF;
+  --ground:#F4F7FC;
   --surface:#FFFFFF;
-  --surface-2:#FBF8F7;
-  --ink:#131721;
-  --ink-2:#4A5261;
-  --ink-3:#828A99;
-  --rule:#DFD6D2;
-  --grid:#E8D6D1;
-  --trace:#C1362C;
-  --trace-soft:#F3E0DD;
-  --deep:#0E4F52;
-  --deep-soft:#E1EDED;
-  --shadow:0 1px 2px rgba(19,23,33,.05), 0 8px 24px -12px rgba(19,23,33,.14);
+  --surface-2:#EDF2FA;
+  --ink:#0A1E3A;
+  --ink-2:#425B7C;
+  --ink-3:#7C90AC;
+  --rule:#DAE3F1;
+  --grid:#E4EBF6;
+  --trace:#1D4ED8;
+  --trace-soft:#E1E9FB;
+  --deep:#0B2A4A;
+  --deep-soft:#E4E9F1;
+  --shadow:0 1px 2px rgba(10,30,58,.05), 0 8px 24px -12px rgba(10,30,58,.14);
 
   --sans:"Helvetica Neue",Helvetica,Arial,"Segoe UI",sans-serif;
   --serif:Charter,"Bitstream Charter","Sitka Text",Cambria,Georgia,serif;
@@ -25,29 +25,29 @@
 }
 @media (prefers-color-scheme:dark){
   :root{
-    --ground:#0B0F16; --surface:#121826; --surface-2:#0F1420;
-    --ink:#EDEFF3; --ink-2:#A0A9BA; --ink-3:#6D7688;
-    --rule:#242C3C; --grid:#19212F;
-    --trace:#FF5A4D; --trace-soft:#2A1714;
-    --deep:#35C6BC; --deep-soft:#0E2A2B;
+    --ground:#050B16; --surface:#0E1B2E; --surface-2:#0A1526;
+    --ink:#EAF1FB; --ink-2:#A9BCD6; --ink-3:#6C82A0;
+    --rule:#1E3350; --grid:#12203A;
+    --trace:#4A8DFF; --trace-soft:#122443;
+    --deep:#38BDF8; --deep-soft:#0B2338;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 28px -14px rgba(0,0,0,.7);
   }
 }
 :root[data-theme="dark"]{
-  --ground:#0B0F16; --surface:#121826; --surface-2:#0F1420;
-  --ink:#EDEFF3; --ink-2:#A0A9BA; --ink-3:#6D7688;
-  --rule:#242C3C; --grid:#19212F;
-  --trace:#FF5A4D; --trace-soft:#2A1714;
-  --deep:#35C6BC; --deep-soft:#0E2A2B;
+  --ground:#050B16; --surface:#0E1B2E; --surface-2:#0A1526;
+  --ink:#EAF1FB; --ink-2:#A9BCD6; --ink-3:#6C82A0;
+  --rule:#1E3350; --grid:#12203A;
+  --trace:#4A8DFF; --trace-soft:#122443;
+  --deep:#38BDF8; --deep-soft:#0B2338;
   --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 28px -14px rgba(0,0,0,.7);
 }
 :root[data-theme="light"]{
-  --ground:#F5F1EF; --surface:#FFFFFF; --surface-2:#FBF8F7;
-  --ink:#131721; --ink-2:#4A5261; --ink-3:#828A99;
-  --rule:#DFD6D2; --grid:#E8D6D1;
-  --trace:#C1362C; --trace-soft:#F3E0DD;
-  --deep:#0E4F52; --deep-soft:#E1EDED;
-  --shadow:0 1px 2px rgba(19,23,33,.05), 0 8px 24px -12px rgba(19,23,33,.14);
+  --ground:#F4F7FC; --surface:#FFFFFF; --surface-2:#EDF2FA;
+  --ink:#0A1E3A; --ink-2:#425B7C; --ink-3:#7C90AC;
+  --rule:#DAE3F1; --grid:#E4EBF6;
+  --trace:#1D4ED8; --trace-soft:#E1E9FB;
+  --deep:#0B2A4A; --deep-soft:#E4E9F1;
+  --shadow:0 1px 2px rgba(10,30,58,.05), 0 8px 24px -12px rgba(10,30,58,.14);
 }
 
 *{box-sizing:border-box}
@@ -225,7 +225,7 @@ footer .fbar{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-bet
 
 <header>
   <div class="wrap bar">
-    <div class="logo">Arterial<b>Age</b></div>
+    <div class="logo">Vascora<b> Health</b></div>
     <nav>
       <a href="#stakes">Stakes</a>
       <a href="#cause">Root cause</a>
@@ -295,7 +295,7 @@ footer .fbar{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-bet
           <div class="row"><h3>Fails</h3><p>Women · South Asian · Black · Elderly.</p></div>
           <div class="row"><h3>1.7×</h3><p>White adults are 1.7 times more likely to meet the diagnostic threshold for HFpEF than Black adults.</p></div>
         </div>
-        <p class="small" style="margin-top:22px"><strong>Structural bias, baked into the most-used diagnostic tool in primary care</strong> — failing exactly the patients most at risk. ArterialAge closes this gap.</p>
+        <p class="small" style="margin-top:22px"><strong>Structural bias, baked into the most-used diagnostic tool in primary care</strong> — failing exactly the patients most at risk. Vascora Health closes this gap.</p>
       </div>
     </div>
   </div>
@@ -400,7 +400,7 @@ footer .fbar{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-bet
 
       <div class="diagram">
         <svg viewBox="0 0 1000 400" role="img" aria-labelledby="dgtitle dgdesc">
-          <title id="dgtitle">ArterialAge wrist-to-ear PPG architecture</title>
+          <title id="dgtitle">Vascora Health wrist-to-ear PPG architecture</title>
           <desc id="dgdesc">A pulse leaves the heart and travels two arterial paths of different length, arriving first at the earlobe clip and then at the wrist pod. A chest hub, connected to both sensors by a shared hardware clock, runs the machine-learning risk model on board. The difference between the two arrival times is shown as delta t.</desc>
 
           <!-- ── left panel: topology ─────────────────────── -->
@@ -552,7 +552,7 @@ footer .fbar{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-bet
         <thead><tr><th>Comparator</th><th>What it is</th><th>Price</th><th>Model</th></tr></thead>
         <tbody>
           <tr><td>iRhythm Zio XT</td><td>14-day single-use cardiac patch with AI analysis and clinician report; NICE-recommended, used across NHS trusts</td><td class="val">£229–265 / patient</td><td>Per-episode service</td></tr>
-          <tr class="us"><td>ArterialAge</td><td>14-day dual-site wearable, six-feature HFpEF risk model, AF detection</td><td class="val">~£250 / episode</td><td>Per-episode service</td></tr>
+          <tr class="us"><td>Vascora Health</td><td>14-day dual-site wearable, six-feature HFpEF risk model, AF detection</td><td class="val">~£250 / episode</td><td>Per-episode service</td></tr>
           <tr><td>FreeStyle Libre 2</td><td>14-day glucose sensor; reader amortised over ~3 years</td><td class="val">~£35 / sensor</td><td>Razor / blade</td></tr>
           <tr><td>SphygmoCor XCEL</td><td>Clinic arterial stiffness system; single 60-second measurement</td><td class="val">Five-figure capital</td><td>One-off capital purchase</td></tr>
         </tbody>
@@ -651,7 +651,7 @@ footer .fbar{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-bet
   <div class="wrap">
     <div class="close">
       <p class="eyebrow">The ask · Pre-seed</p>
-      <h2 style="margin-top:14px">Raising to take ArterialAge from MVP to first paid pilots.</h2>
+      <h2 style="margin-top:14px">Raising to take Vascora Health from MVP to first paid pilots.</h2>
       <p class="lede">The NHS is not short of heart failure treatment. It is short of timely heart failure detection. That is the gap we sell into — and this round funds the two-site timing validation, the quality system, and the first clinical pilot that turns the evidence base into an NHS purchase order.</p>
       <div class="road" style="margin-top:32px">
         <div class="q"><span class="tag">Engineering</span><h3>Two-site timing validation</h3><p>Demonstrating sub-millisecond cross-site timing on our own hardware — the first milestone everything else depends on.</p></div>
@@ -668,10 +668,10 @@ footer .fbar{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-bet
 <footer>
   <div class="wrap">
     <div class="fbar">
-      <span>ArterialAge · Imperial College London</span>
+      <span>Vascora Health · Imperial College London</span>
       <span>Pre-seed · UK launch · NHS + private clinics</span>
     </div>
-    <p class="srcs">Sources: UK heart failure prevalence study (920,616 cases; ~190,000 new cases/year); NHS England and Savarese &amp; Lund 2017 (HFpEF 40–50% of diagnoses); Roche / Pumping Marvellous, <em>The Heart Failure Challenge</em> (£3,690 average admission; 74.8% first diagnosed in hospital; ~2% of NHS budget, 5% of unplanned admissions); National Heart Failure Audit (862,470 bed days 2018/19; 27-day echo-to-admission interval; median 8-day stay); Tribouilloy et al., <em>European Heart Journal</em> 2008 (five-year mortality); meta-analysis of 27 studies, 6,626 patients (PWV vs E/e′ and E/A); ESC Heart Failure (aortic PWV and HF hospitalisation; pre-HFpEF phenotypes); EMPEROR-Preserved and DELIVER pre-specified meta-analysis, 12,251 participants (HR 0.74); NHS Cost &amp; Tariff Calculator, National Cost Collection 2024/25 (20–30% marginal cash-releasing share); NHS England Marginal Rate Emergency Rule; NICE / pharmaphorum and SHTG (Zio XT £229–265); NHS Drug Tariff (FreeStyle Libre 2); MHRA UKCA guidance; Health Innovation Network (MedTech Funding Mandate criteria). Figures described as modelled or assumed are labelled as such and are not forecasts. ArterialAge is an investigational device; it is not UKCA-marked and is not available for clinical use.</p>
+    <p class="srcs">Sources: UK heart failure prevalence study (920,616 cases; ~190,000 new cases/year); NHS England and Savarese &amp; Lund 2017 (HFpEF 40–50% of diagnoses); Roche / Pumping Marvellous, <em>The Heart Failure Challenge</em> (£3,690 average admission; 74.8% first diagnosed in hospital; ~2% of NHS budget, 5% of unplanned admissions); National Heart Failure Audit (862,470 bed days 2018/19; 27-day echo-to-admission interval; median 8-day stay); Tribouilloy et al., <em>European Heart Journal</em> 2008 (five-year mortality); meta-analysis of 27 studies, 6,626 patients (PWV vs E/e′ and E/A); ESC Heart Failure (aortic PWV and HF hospitalisation; pre-HFpEF phenotypes); EMPEROR-Preserved and DELIVER pre-specified meta-analysis, 12,251 participants (HR 0.74); NHS Cost &amp; Tariff Calculator, National Cost Collection 2024/25 (20–30% marginal cash-releasing share); NHS England Marginal Rate Emergency Rule; NICE / pharmaphorum and SHTG (Zio XT £229–265); NHS Drug Tariff (FreeStyle Libre 2); MHRA UKCA guidance; Health Innovation Network (MedTech Funding Mandate criteria). Figures described as modelled or assumed are labelled as such and are not forecasts. Vascora Health is an investigational device; it is not UKCA-marked and is not available for clinical use.</p>
   </div>
 </footer>
 
