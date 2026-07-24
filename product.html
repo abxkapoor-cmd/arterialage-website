@@ -142,92 +142,74 @@
     <p class="lede" style="margin-top:20px">Strap, base shell, board, top shell — the wrist pod is four parts. The base shell's window sits directly over the board's optical module, against the skin.</p>
 
     <div class="diagram">
-      <svg viewBox="0 0 920 480" role="img" aria-labelledby="hwtitle hwdesc">
+      <svg viewBox="0 0 920 460" role="img" aria-labelledby="hwtitle hwdesc">
         <title id="hwtitle">Vascora Health wrist pod hardware, exploded</title>
-        <desc id="hwdesc">A studio-style exploded product view of the wrist pod in four parts, left to right: a silicone strap, a base shell with an optical window, the main circuit board, and a top shell, rendered as glossy plastic and a real circuit board on a light background.</desc>
+        <desc id="hwdesc">An exploded product view of the wrist pod in four parts, left to right: a silicone strap, a base shell with an optical window, the main circuit board, and a top shell.</desc>
         <defs>
-          <linearGradient id="stageBg" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#F4F5F7"/>
-            <stop offset="1" stop-color="#E3E5EA"/>
+          <linearGradient id="shellTop" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#96A1B4"/>
+            <stop offset="1" stop-color="#4A5468"/>
           </linearGradient>
-          <radialGradient id="shellRadA" cx="32%" cy="26%" r="85%">
-            <stop offset="0" stop-color="#C3CAD8"/>
-            <stop offset="0.45" stop-color="#8992A6"/>
-            <stop offset="1" stop-color="#3E4658"/>
-          </radialGradient>
-          <radialGradient id="shellRadB" cx="32%" cy="26%" r="85%">
-            <stop offset="0" stop-color="#A9B1C2"/>
-            <stop offset="0.45" stop-color="#6D7688"/>
-            <stop offset="1" stop-color="#2A303C"/>
-          </radialGradient>
+          <linearGradient id="shellBase" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#69748A"/>
+            <stop offset="1" stop-color="#2B3240"/>
+          </linearGradient>
           <linearGradient id="pcbGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#2C4433"/>
-            <stop offset="1" stop-color="#152018"/>
+            <stop offset="0" stop-color="#25352B"/>
+            <stop offset="1" stop-color="#121C16"/>
           </linearGradient>
-          <filter id="softShadow" x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation="7"/>
-          </filter>
+          <radialGradient id="floorGlow" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+            <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+          </radialGradient>
         </defs>
 
-        <rect x="10" y="10" width="900" height="440" rx="26" fill="url(#stageBg)"/>
-
-        <!-- shadows -->
-        <ellipse cx="122" cy="368" rx="80" ry="14" fill="#1A1E24" opacity="0.28" filter="url(#softShadow)"/>
-        <ellipse cx="355" cy="308" rx="92" ry="14" fill="#1A1E24" opacity="0.28" filter="url(#softShadow)"/>
-        <ellipse cx="565" cy="298" rx="92" ry="14" fill="#1A1E24" opacity="0.24" filter="url(#softShadow)"/>
-        <ellipse cx="785" cy="308" rx="92" ry="14" fill="#1A1E24" opacity="0.28" filter="url(#softShadow)"/>
-
-        <!-- strap: filled crescent -->
-        <path d="M 185 95 C 95 95 58 155 58 220 C 58 285 95 345 185 345 L 185 305 C 128 305 98 265 98 220 C 98 175 128 135 185 135 Z"
-              fill="url(#shellRadB)" stroke="#20242C" stroke-width="2"/>
-        <path d="M 172 108 C 118 112 90 150 82 195" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+        <!-- strap -->
+        <path d="M 170 90 C 90 90 55 150 55 210 C 55 270 90 330 170 330" fill="none" stroke="var(--ink)" stroke-width="40" stroke-linecap="round"/>
+        <path d="M 170 90 C 90 90 55 150 55 210 C 55 270 90 330 170 330" fill="none" stroke="url(#shellBase)" stroke-width="34" stroke-linecap="round"/>
 
         <!-- base shell -->
-        <rect x="270" y="160" width="170" height="120" rx="40" fill="url(#shellRadB)" stroke="#20242C" stroke-width="2"/>
-        <path d="M 288 178 C 320 168 360 165 400 170" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.3"/>
-        <circle cx="355" cy="222" r="22" fill="#EDEEF0" stroke="#1B2430" stroke-width="2"/>
-        <circle cx="355" cy="222" r="22" fill="none" stroke="#0F1620" stroke-width="1" opacity="0.4"/>
-        <circle cx="355" cy="222" r="7" fill="none" stroke="var(--trace)" stroke-width="2"/>
-        <circle cx="355" cy="222" r="2.4" fill="var(--trace)"/>
+        <rect x="260" y="150" width="170" height="120" rx="40" fill="url(#shellBase)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="345" cy="210" r="22" fill="var(--ground)" stroke="var(--deep)" stroke-width="2"/>
+        <circle cx="345" cy="210" r="7" fill="none" stroke="var(--trace)" stroke-width="1.5"/>
 
         <!-- board -->
-        <rect x="480" y="172" width="168" height="96" rx="6" fill="url(#pcbGrad)" stroke="#0C1410" stroke-width="2"/>
-        <rect x="648" y="200" width="20" height="40" rx="3" fill="#B9BCC0" stroke="#4A4D50" stroke-width="1"/>
-        <circle cx="497" cy="181" r="2.6" fill="#C9A227"/>
-        <circle cx="516" cy="181" r="2.6" fill="#C9A227"/>
-        <circle cx="535" cy="181" r="2.6" fill="#C9A227"/>
-        <circle cx="554" cy="181" r="2.6" fill="#C9A227"/>
-        <circle cx="573" cy="181" r="2.6" fill="#C9A227"/>
-        <circle cx="592" cy="181" r="2.6" fill="#C9A227"/>
-        <circle cx="611" cy="181" r="2.6" fill="#C9A227"/>
-        <circle cx="630" cy="181" r="2.6" fill="#C9A227"/>
-        <rect x="494" y="196" width="40" height="28" rx="2" fill="#12140F" stroke="#050603" stroke-width="1"/>
-        <rect x="590" y="196" width="40" height="28" rx="2" fill="#12140F" stroke="#050603" stroke-width="1"/>
-        <rect x="504" y="204" width="6" height="12" fill="#8A8F95"/>
-        <rect x="516" y="204" width="6" height="12" fill="#8A8F95"/>
-        <rect x="600" y="204" width="6" height="12" fill="#8A8F95"/>
-        <rect x="612" y="204" width="6" height="12" fill="#8A8F95"/>
-        <circle cx="563" cy="246" r="13" fill="#0B120D" stroke="#3A4A3F" stroke-width="1.5"/>
-        <circle cx="563" cy="246" r="6" fill="var(--trace)" opacity="0.9"/>
-        <rect x="498" y="240" width="10" height="6" fill="#7A6A3A"/>
-        <rect x="514" y="240" width="10" height="6" fill="#7A6A3A"/>
+        <rect x="470" y="160" width="170" height="100" rx="8" fill="url(#pcbGrad)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="486" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="506" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="526" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="546" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="566" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="586" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="606" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="626" cy="168" r="3" fill="var(--deep)"/>
+        <rect x="486" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
+        <rect x="582" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
+        <circle cx="555" cy="232" r="13" fill="none" stroke="var(--trace)" stroke-width="2"/>
+        <circle cx="555" cy="232" r="4" fill="var(--trace)"/>
 
         <!-- top shell -->
-        <rect x="700" y="160" width="170" height="120" rx="40" fill="url(#shellRadA)" stroke="#20242C" stroke-width="2"/>
-        <path d="M 718 176 C 750 164 795 160 832 166" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.4"/>
+        <rect x="690" y="150" width="170" height="120" rx="40" fill="url(#shellTop)" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M 710 165 C 740 155 780 152 815 158" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.18"/>
+
+        <!-- floor glow -->
+        <ellipse cx="112" cy="352" rx="72" ry="12" fill="url(#floorGlow)"/>
+        <ellipse cx="345" cy="292" rx="88" ry="13" fill="url(#floorGlow)"/>
+        <ellipse cx="555" cy="282" rx="88" ry="13" fill="url(#floorGlow)"/>
+        <ellipse cx="775" cy="292" rx="88" ry="13" fill="url(#floorGlow)"/>
 
         <!-- captions -->
-        <text x="122" y="398" text-anchor="middle" style="font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.12em" fill="#232A36">STRAP</text>
-        <text x="122" y="416" text-anchor="middle" style="font-family:var(--mono);font-size:11.5px;letter-spacing:.06em" fill="#6B7484">Silicone, snaps to pod</text>
+        <text class="dg-label" x="112" y="386" text-anchor="middle">STRAP</text>
+        <text class="dg-sub" x="112" y="404" text-anchor="middle">Silicone, snaps to pod</text>
 
-        <text x="355" y="340" text-anchor="middle" style="font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.12em" fill="#232A36">BASE SHELL</text>
-        <text x="355" y="358" text-anchor="middle" style="font-family:var(--mono);font-size:11.5px;letter-spacing:.06em" fill="#6B7484">Optical window, worn against skin</text>
+        <text class="dg-label" x="345" y="326" text-anchor="middle">BASE SHELL</text>
+        <text class="dg-sub" x="345" y="344" text-anchor="middle">Optical window, worn against skin</text>
 
-        <text x="565" y="330" text-anchor="middle" style="font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.12em" fill="#232A36">MAIN BOARD</text>
-        <text x="565" y="348" text-anchor="middle" style="font-family:var(--mono);font-size:11.5px;letter-spacing:.06em" fill="#6B7484">PPG capture · BLE · battery</text>
+        <text class="dg-label" x="555" y="316" text-anchor="middle">MAIN BOARD</text>
+        <text class="dg-sub" x="555" y="334" text-anchor="middle">PPG capture · BLE · battery</text>
 
-        <text x="785" y="340" text-anchor="middle" style="font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.12em" fill="#232A36">TOP SHELL</text>
-        <text x="785" y="358" text-anchor="middle" style="font-family:var(--mono);font-size:11.5px;letter-spacing:.06em" fill="#6B7484">Injection-moulded</text>
+        <text class="dg-label" x="775" y="326" text-anchor="middle">TOP SHELL</text>
+        <text class="dg-sub" x="775" y="344" text-anchor="middle">Injection-moulded</text>
       </svg>
       <p class="dg-cap">Four parts, one pod: a silicone strap, a base shell whose window sits directly over the board's optical module, the board itself, and a top shell.</p>
     </div>
@@ -235,7 +217,102 @@
     <div class="feat">
       <div><h3>Reflectance mode</h3><p>Light enters the tissue and returns through the same window — three wavelengths, 940 nm infrared penetrating deepest.</p></div>
       <div><h3>One board, one job</h3><p>The wrist pod's controller handles PPG capture and timing sync with the earlobe clip over the shared hardware clock.</p></div>
-      <div><h3>Ear clip — coming soon</h3><p>The transmission-mode earlobe design, in the same exploded style, will be added here.</p></div>
+      <div><h3>Shared design</h3><p>The earlobe clip's outer board reuses this same wrist board — one design, built once, used twice.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ear-clip" style="border-bottom:0">
+  <div class="wrap">
+    <p class="eyebrow">Hardware · Earlobe clip</p>
+    <h2>The earlobe clip, exploded.</h2>
+    <p class="lede" style="margin-top:20px">A clip, not a case: an outer shell and inner shell sandwich two boards around the earlobe. The outer (lateral) side reuses the wrist pod's board; the inner (medial) side carries a smaller board, sized for the tighter space.</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 980 460" role="img" aria-labelledby="ectitle ecdesc">
+        <title id="ectitle">Vascora Health earlobe clip hardware, exploded</title>
+        <desc id="ecdesc">An exploded product view of the earlobe clip in four parts, left to right: a larger outer shell, the main circuit board shared with the wrist pod, a smaller inner circuit board, and a smaller inner shell — material covering both sides of the two boards.</desc>
+        <defs>
+          <linearGradient id="shellTopEC" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#96A1B4"/>
+            <stop offset="1" stop-color="#4A5468"/>
+          </linearGradient>
+          <linearGradient id="shellBaseEC" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#69748A"/>
+            <stop offset="1" stop-color="#2B3240"/>
+          </linearGradient>
+          <linearGradient id="pcbGradEC" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#25352B"/>
+            <stop offset="1" stop-color="#121C16"/>
+          </linearGradient>
+          <radialGradient id="floorGlowEC" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+            <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- outer shell (larger, lateral side) -->
+        <rect x="50" y="130" width="190" height="150" rx="46" fill="url(#shellTopEC)" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M 72 150 C 110 138 160 134 205 142" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.18"/>
+
+        <!-- clear divider -->
+        <rect x="266" y="165" width="14" height="90" rx="7" fill="var(--surface)" stroke="var(--ink-3)" stroke-width="1" opacity="0.55"/>
+
+        <!-- main board (shared with wrist pod) -->
+        <rect x="316" y="160" width="170" height="100" rx="8" fill="url(#pcbGradEC)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="332" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="352" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="372" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="392" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="412" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="432" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="452" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="472" cy="168" r="3" fill="var(--deep)"/>
+        <rect x="332" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
+        <rect x="428" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
+        <circle cx="401" cy="232" r="13" fill="none" stroke="var(--trace)" stroke-width="2"/>
+        <circle cx="401" cy="232" r="4" fill="var(--trace)"/>
+
+        <!-- small board (inner, medial side) -->
+        <rect x="536" y="180" width="110" height="70" rx="6" fill="url(#pcbGradEC)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="550" cy="188" r="2.4" fill="var(--deep)"/>
+        <circle cx="566" cy="188" r="2.4" fill="var(--deep)"/>
+        <circle cx="582" cy="188" r="2.4" fill="var(--deep)"/>
+        <circle cx="598" cy="188" r="2.4" fill="var(--deep)"/>
+        <rect x="548" y="200" width="26" height="20" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
+        <circle cx="611" cy="222" r="9" fill="none" stroke="var(--trace)" stroke-width="1.8"/>
+        <circle cx="611" cy="222" r="3" fill="var(--trace)"/>
+
+        <!-- inner shell (smaller, medial side) -->
+        <rect x="700" y="145" width="150" height="120" rx="40" fill="url(#shellBaseEC)" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M 718 160 C 745 150 780 147 810 153" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.16"/>
+
+        <!-- floor glow -->
+        <ellipse cx="145" cy="322" rx="88" ry="13" fill="url(#floorGlowEC)"/>
+        <ellipse cx="401" cy="302" rx="88" ry="13" fill="url(#floorGlowEC)"/>
+        <ellipse cx="591" cy="292" rx="60" ry="11" fill="url(#floorGlowEC)"/>
+        <ellipse cx="775" cy="307" rx="80" ry="13" fill="url(#floorGlowEC)"/>
+
+        <!-- captions -->
+        <text class="dg-label" x="145" y="356" text-anchor="middle">OUTER SHELL</text>
+        <text class="dg-sub" x="145" y="374" text-anchor="middle">Larger, lateral side</text>
+
+        <text class="dg-label" x="401" y="336" text-anchor="middle">MAIN BOARD</text>
+        <text class="dg-sub" x="401" y="354" text-anchor="middle">Same board as the wrist pod</text>
+
+        <text class="dg-label" x="591" y="316" text-anchor="middle">INNER BOARD</text>
+        <text class="dg-sub" x="591" y="334" text-anchor="middle">Smaller, medial side</text>
+
+        <text class="dg-label" x="775" y="341" text-anchor="middle">INNER SHELL</text>
+        <text class="dg-sub" x="775" y="359" text-anchor="middle">Smaller, medial side</text>
+      </svg>
+      <p class="dg-cap">Material on both sides: an outer shell and inner shell sandwich the two boards, clipping around the earlobe — transmission mode, light passing straight through.</p>
+    </div>
+
+    <div class="feat">
+      <div><h3>Transmission mode</h3><p>Light passes straight through the earlobe, giving a cleaner pulse waveform at the site the pulse reaches first.</p></div>
+      <div><h3>Two boards, one clip</h3><p>The larger board (shared with the wrist pod) sits outer-side; a smaller board sits inner-side, in the tighter space.</p></div>
+      <div><h3>Same shared clock</h3><p>Both boards sync to the same hardware clock as the wrist pod, timing the pulse between the two sites.</p></div>
     </div>
   </div>
 </section>
