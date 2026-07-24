@@ -208,7 +208,7 @@
   <div class="wrap">
     <p class="eyebrow">The model</p>
     <h2>Seven features, one risk score — fused across the wear period.</h2>
-    <p class="lede" style="margin-top:20px">The wrist pod's controller doesn't just capture PPG — it runs the classifier. Seven physiological features, spanning arterial stiffness, autonomic function, rhythm, and activity, are combined into a single HFpEF risk score, updated continuously across the full 14-day wear period rather than as a one-off snapshot.</p>
+    <p class="lede" style="margin-top:20px">The classifier runs on the chest hub's microcontroller, not the wrist pod. Seven physiological features, spanning arterial stiffness, autonomic function, rhythm, and activity, are combined into a single HFpEF risk score, updated continuously across the full 14-day wear period rather than as a one-off snapshot.</p>
 
     <div class="feat">
       <div><h3>Arterial stiffness</h3><p>Resting pulse wave velocity, plus how it shifts overnight and under light activity — timed wrist-to-ear, with no BP cuff involved.</p></div>
@@ -220,7 +220,7 @@
     <div class="block" style="margin-top:56px">
       <p class="eyebrow">Edge AI</p>
       <h2 class="sub" style="margin:12px 0 20px">Designed to run inference on the wearable, not in the cloud.</h2>
-      <p class="lede">Most consumer wearables capture raw sensor data and classify it remotely — on a phone or a server. Ours is architected not to need that: a model small enough to run directly on the wrist pod's own controller, so a risk score can exist the moment the pulse data does — no upload, no server round trip, no dependency on anything beyond the device itself.</p>
+      <p class="lede">Most consumer wearables capture raw sensor data and classify it remotely — on a phone or a server. Ours is architected not to need that: a model small enough to run directly on the chest hub's own microcontroller, so a risk score can exist the moment the pulse data does — no upload, no server round trip, no dependency on anything beyond the device itself.</p>
 
       <div class="feat">
         <div><h3>Battery across 14 days</h3><p>Radio, not compute, is usually what drains a wearable — streaming two weeks of continuous high-frequency PPG over BLE is expensive. Classifying locally and syncing only a compact result is what makes two weeks on one charge realistic.</p></div>
