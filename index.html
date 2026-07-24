@@ -12,13 +12,10 @@
   <div class="wrap bar">
     <a class="logo" href="/">Vascora<b> Health</b></a>
     <nav>
-      <a href="/problem">Problem</a>
-      <a href="/evidence">Evidence</a>
-      <a href="/solution">Solution</a>
-      <a href="/market">Market</a>
-      <a href="/business">Business</a>
-      <a href="/team">Team</a>
-      <a href="/ask">Ask</a>
+      <a href="#problem">Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#market">Market</a>
+      <a href="#team">Team</a>
     </nav>
   </div>
 </header>
@@ -27,66 +24,166 @@
   <div class="wrap hero-in">
     <p class="eyebrow">Arterial stiffness screening for HFpEF</p>
     <h1>Half of all heart failures were invisible. <span>Until now.</span></h1>
-    <p class="lede">Arterial stiffness — not BP — is the true early signal for HFpEF. It is invisible to a blood pressure monitor.</p>
-    <p class="kicker">A passive 14-day home wearable that finds the patients the current pathway misses — before the emergency admission does.</p>
+    <p class="lede">A passive 14-day wearable that finds the patients today's blood pressure cuff misses — before the emergency admission does.</p>
     <canvas id="wave" aria-hidden="true"></canvas>
   </div>
 </div>
 
 <main>
 
-<section style="border-bottom:0">
+<section id="problem">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Explore</p>
-      <h2>Seven things, one page each.</h2>
-      <p class="lede">The full case for Vascora Health, broken into focused pages — problem, evidence, product, market, model, team, and the ask.</p>
+    <p class="eyebrow">The problem</p>
+    <h2>She thought her blood pressure was normal. Three years later she had heart failure.</h2>
+    <p class="lede" style="margin-top:20px">HFpEF is roughly half of all heart failure. Its pump looks fine on every standard test, so patients are reassured and sent away — until they arrive in crisis. The BP monitor that clears them was calibrated on one body type, and misreads everyone else.</p>
+
+    <div class="statrow">
+      <div class="statline"><span class="num">~80%</span><p>of patients are diagnosed only after an emergency admission.</p></div>
+      <div class="statline"><span class="num">~50%</span><p>five-year mortality — comparable to many cancers.</p></div>
+      <div class="statline"><span class="num">1.7×</span><p>more likely to meet the diagnostic threshold if you're white, versus Black.</p></div>
     </div>
 
-    <div class="menu-grid">
-      <a class="menu-card" href="/problem">
-        <p class="mono">01 — The problem</p>
-        <h3>She thought her blood pressure was normal. Three years later she had heart failure.</h3>
-        <p>Why HFpEF stays invisible to today's tools, and who the standard BP monitor fails.</p>
-        <span class="go">Read more →</span>
-      </a>
-      <a class="menu-card" href="/evidence">
-        <p class="mono">02 — The evidence</p>
-        <h3>The warning isn't weight or blood pressure. It's arterial stiffness.</h3>
-        <p>The cascade from arterial stiffness to emergency admission, and the published evidence behind it.</p>
-        <span class="go">Read more →</span>
-      </a>
-      <a class="menu-card" href="/solution">
-        <p class="mono">03 — The solution</p>
-        <h3>A wearable that watches your arteries — not just your pulse.</h3>
-        <p>The product: chest hub, wrist pod, earlobe clip — and the causal chain to savings.</p>
-        <span class="go">Read more →</span>
-      </a>
-      <a class="menu-card" href="/market">
-        <p class="mono">04 — Market &amp; value</p>
-        <h3>The cost of finding heart failure too late.</h3>
-        <p>NHS cost data, and the market sized bottom-up as a narrowing funnel.</p>
-        <span class="go">Read more →</span>
-      </a>
-      <a class="menu-card" href="/business">
-        <p class="mono">05 — Business model</p>
-        <h3>Everyone else measures one thing, once. We measure two, continuously.</h3>
-        <p>Pricing, defensibility, unit economics, and the regulated route to market.</p>
-        <span class="go">Read more →</span>
-      </a>
-      <a class="menu-card" href="/team">
-        <p class="mono">06 — Team</p>
-        <h3>Turning world-leading research into life-saving tech.</h3>
-        <p>The founding team and Imperial College London advisory faculty.</p>
-        <span class="go">Read more →</span>
-      </a>
-      <a class="menu-card" href="/ask">
-        <p class="mono">07 — The ask</p>
-        <h3>Raising to take Vascora Health from MVP to first paid pilots.</h3>
-        <p>Pre-seed, and what this round funds.</p>
-        <span class="go">Read more →</span>
-      </a>
+    <p class="statement">The cure exists. The patients exist. What doesn't exist is a way to find them.</p>
+  </div>
+</section>
+
+<section id="insight">
+  <div class="wrap">
+    <p class="eyebrow">The insight</p>
+    <h2>The warning isn't weight or blood pressure. It's arterial stiffness.</h2>
+    <p class="lede" style="margin-top:20px">As arteries stiffen with vascular ageing, the heart's ability to fill quietly declines — years before fluid, symptoms, or an admission make it visible to anyone else.</p>
+
+    <div class="cascade">
+      <div class="cascade-inner">
+        <div class="casc-row">
+          <div class="node win"><p class="mono">01</p><h3>Arterial stiffness rises</h3></div>
+          <div class="node"><p class="mono">02</p><h3>Fluid and weight rise</h3></div>
+          <div class="node"><p class="mono">03</p><h3>Symptoms appear</h3></div>
+          <div class="node late"><p class="mono">04</p><h3>Emergency admission</h3></div>
+        </div>
+        <div class="casc-axis">
+          <div class="axis-cell win">Our window</div>
+          <div class="axis-cell">Days later</div>
+          <div class="axis-cell late">Today's tools catch it here</div>
+          <div class="axis-cell late">Too late</div>
+        </div>
+      </div>
     </div>
+    <p class="small" style="margin-top:22px;max-width:var(--measure)">Published, not hypothetical: a 27-study, 6,626-patient meta-analysis found pulse wave velocity correlates with the echocardiographic markers used to diagnose HFpEF — and SGLT2 inhibitors now cut hospitalisation by ~26% once patients are found.</p>
+  </div>
+</section>
+
+<section id="solution">
+  <div class="wrap">
+    <p class="eyebrow">The solution</p>
+    <h2>A wearable that watches your arteries — not just your pulse.</h2>
+    <p class="lede" style="margin-top:20px">A chest hub and two optical sensors — wrist and earlobe — sharing one hardware clock. The gap between the pulse arriving at each site is timed to sub-millisecond precision, and an onboard model turns that into an HFpEF risk score. No cuff, no needle, no clinic visit.</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 1000 400" role="img" aria-labelledby="dgtitle dgdesc">
+        <title id="dgtitle">Vascora Health wrist-to-ear PPG architecture</title>
+        <desc id="dgdesc">A pulse leaves the heart and travels two arterial paths of different length, arriving first at the earlobe clip and then at the wrist pod. A chest hub, connected to both sensors by a shared hardware clock, runs the machine-learning risk model on board. The difference between the two arrival times is shown as delta t.</desc>
+
+        <path class="draw-path" d="M 66 204 C 170 152 250 112 392 106" fill="none" stroke="var(--trace)" stroke-width="2"/>
+        <path class="draw-path" d="M 66 216 C 170 272 250 312 392 318" fill="none" stroke="var(--trace)" stroke-width="2"/>
+
+        <circle cx="58" cy="210" r="7" fill="var(--trace)"/>
+        <text class="dg-tick" x="58" y="244" text-anchor="middle">HEART</text>
+
+        <line x1="290" y1="180" x2="392" y2="118" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <line x1="290" y1="244" x2="392" y2="306" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+        <rect x="176" y="180" width="196" height="64" rx="3" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="1.5"/>
+        <text class="dg-hub" x="274" y="206" text-anchor="middle">CHEST HUB</text>
+        <text class="dg-sub" x="274" y="226" text-anchor="middle">ML MODEL · BLE · BATTERY</text>
+
+        <circle cx="404" cy="106" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
+        <circle cx="404" cy="106" r="4" fill="var(--deep)"/>
+        <text class="dg-label" x="430" y="102">EARLOBE CLIP</text>
+        <text class="dg-sub" x="430" y="122">Transmission mode</text>
+
+        <circle cx="404" cy="318" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
+        <circle cx="404" cy="318" r="4" fill="var(--deep)"/>
+        <text class="dg-label" x="430" y="314">WRIST POD</text>
+        <text class="dg-sub" x="430" y="334">Reflectance mode</text>
+
+        <text class="dg-sub" x="430" y="212">SHARED HARDWARE CLOCK</text>
+
+        <line x1="614" y1="56" x2="614" y2="372" stroke="var(--rule)" stroke-width="1"/>
+
+        <text class="dg-tick" x="656" y="76">TIMING READOUT</text>
+
+        <text class="dg-tick" x="656" y="142">EAR</text>
+        <path class="draw-path" d="M 656 190 L 690 190 C 704 190 710 182 716 132 C 720 118 730 120 736 144 C 742 164 746 160 754 158 C 762 156 766 168 774 174 C 786 182 796 188 810 190 L 964 190"
+              fill="none" stroke="var(--trace)" stroke-width="1.8" stroke-linejoin="round"/>
+
+        <text class="dg-tick" x="656" y="258">WRIST</text>
+        <path class="draw-path" d="M 656 306 L 760 306 C 774 306 780 298 786 248 C 790 234 800 236 806 260 C 812 280 816 276 824 274 C 832 272 836 284 844 290 C 856 298 866 304 880 306 L 964 306"
+              fill="none" stroke="var(--trace)" stroke-width="1.8" stroke-linejoin="round"/>
+
+        <line x1="717" y1="118" x2="717" y2="336" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="787" y1="118" x2="787" y2="336" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+
+        <line x1="717" y1="352" x2="787" y2="352" stroke="var(--trace)" stroke-width="1.5"/>
+        <path d="M 717 352 l 8 -4 v 8 z" fill="var(--trace)"/>
+        <path d="M 787 352 l -8 -4 v 8 z" fill="var(--trace)"/>
+        <text class="dg-dt" x="752" y="342" text-anchor="middle">Δt</text>
+
+        <text class="dg-sub" x="812" y="357">→ PULSE WAVE VELOCITY</text>
+      </svg>
+    </div>
+
+    <div class="feat">
+      <div><h3>14 days, worn at home</h3><p>Posted out, worn, returned — then cleaned and redeployed to the next patient.</p></div>
+      <div><h3>Additive, not disruptive</h3><p>Sits before ECG and echo. Replaces nothing already in the pathway.</p></div>
+      <div><h3>Earlier therapy, fewer admissions</h3><p>Earlier detection means earlier SGLT2 treatment — worth ~26% fewer hospitalisations.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="market">
+  <div class="wrap">
+    <p class="eyebrow">Market &amp; model</p>
+    <h2>The cost of finding heart failure too late.</h2>
+    <p class="lede" style="margin-top:20px">Heart failure costs the NHS ~£2bn a year, mostly paid late — at the most expensive possible point of detection. We're priced at what the system already pays for comparable diagnostics, sized bottom-up from patients already inside the diagnostic pathway today.</p>
+
+    <div class="statrow">
+      <div class="statline"><span class="num">£2bn</span><p>annual NHS cost of heart failure care.</p></div>
+      <div class="statline"><span class="num">~£250</span><p>per 14-day episode — in line with the NHS's existing Zio XT tariff.</p></div>
+      <div class="statline"><span class="num">360–450k</span><p>people living with HFpEF in the UK today.</p></div>
+    </div>
+
+    <p class="small" style="margin-top:24px;max-width:var(--measure)">Pay-per-episode, not capital equipment — opex, not capex, which matches how the NHS actually buys. Route to market: private clinics first (UKCA mark only), then NHS pilots, then national funding once outcome data exists. Class IIa medical device, on a known regulatory clock.</p>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <p class="eyebrow">Our team</p>
+    <h2>Turning world-leading research into life-saving tech.</h2>
+
+    <div class="people">
+      <div class="person"><h3>Pranav Sharma</h3><p>MEng Electrical &amp; Information Engineering</p></div>
+      <div class="person"><h3>Abhi Kapoor</h3><p>MEng Electrical &amp; Electronic Engineering</p></div>
+      <div class="person"><h3>Krish Thakrar</h3><p>MEng Mechanical Engineering</p></div>
+      <div class="person"><h3>Anjali Ketan</h3><p>Medical Biosciences with Management</p></div>
+      <div class="person"><h3>Joshika Manikandan</h3><p>Chemistry</p></div>
+    </div>
+    <p class="small" style="margin-top:6px">Imperial College London</p>
+
+    <div class="people" style="margin-top:36px">
+      <div class="person"><h3>Dr. Kim H. Parker</h3><p>Emeritus Professor, Bioengineering — pioneer of wave-intensity analysis, the physics behind our approach.</p></div>
+      <div class="person"><h3>Dr. Sonali Parbhoo</h3><p>Assistant Professor, AI for Actionable Impact Lab — interpretable AI for clinical decisions.</p></div>
+    </div>
+    <p class="small" style="margin-top:6px">Advisory faculty</p>
+  </div>
+</section>
+
+<section style="border-bottom:0">
+  <div class="wrap">
+    <p class="eyebrow">The ask · Pre-seed</p>
+    <h2 style="margin-top:14px">Raising to take Vascora Health from MVP to first paid pilots.</h2>
+    <p class="lede" style="margin-top:18px">This round funds two-site timing validation, the quality system, and the first clinical pilot that turns the evidence base into an NHS purchase order.</p>
   </div>
 </section>
 
@@ -96,9 +193,9 @@
   <div class="wrap">
     <div class="fbar">
       <span>Vascora Health · Imperial College London</span>
-      <span>Pre-seed · UK launch · NHS + private clinics</span>
+      <span>Pre-seed · UK launch</span>
     </div>
-    <p class="disclaim">Vascora Health is an investigational device; it is not UKCA-marked and is not available for clinical use. <a href="/sources">Sources &amp; methodology →</a></p>
+    <p class="disclaim">Vascora Health is an investigational device; it is not UKCA-marked and is not available for clinical use.</p>
   </div>
 </footer>
 

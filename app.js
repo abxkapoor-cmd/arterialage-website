@@ -64,7 +64,7 @@
     p.style.strokeDashoffset = len;
   });
 
-  var targets = document.querySelectorAll('.card, .stat, .node, .step, .tier, .link, .q, .person, .diagram, .chain, .tablewrap, .menu-card');
+  var targets = document.querySelectorAll('.statline, .feat > div, .node, .person, .diagram, .cascade');
   targets.forEach(function(el, i){
     el.classList.add('reveal');
     el.style.transitionDelay = (Math.min(i % 6, 5) * 55) + 'ms';
