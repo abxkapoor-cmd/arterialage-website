@@ -226,12 +226,12 @@
   <div class="wrap">
     <p class="eyebrow">Hardware · Earlobe clip</p>
     <h2>The earlobe clip, exploded.</h2>
-    <p class="lede" style="margin-top:20px">A clip, not a case: an outer shell and inner shell sandwich two boards around the earlobe. The outer (lateral) side reuses the wrist pod's board; the inner (medial) side carries a smaller board, sized for the tighter space.</p>
+    <p class="lede" style="margin-top:20px">A clip, not a case: the earlobe sits between two thin shell surfaces, with the outer shell and board on one side and the smaller inner board and shell on the other. The outer side reuses the wrist pod's board; the inner side carries a smaller board, sized for the tighter space.</p>
 
     <div class="diagram">
-      <svg viewBox="0 0 980 460" role="img" aria-labelledby="ectitle ecdesc">
+      <svg viewBox="0 0 1040 460" role="img" aria-labelledby="ectitle ecdesc">
         <title id="ectitle">Vascora Health earlobe clip hardware, exploded</title>
-        <desc id="ecdesc">An exploded product view of the earlobe clip in four parts, left to right: a larger outer shell, the main circuit board shared with the wrist pod, a smaller inner circuit board, and a smaller inner shell — material covering both sides of the two boards.</desc>
+        <desc id="ecdesc">An exploded product view of the earlobe clip in seven parts, left to right: a larger outer shell, the main circuit board shared with the wrist pod, a thin outer clip surface, a gap where the earlobe sits between the two clip surfaces, a thin inner clip surface, a smaller inner circuit board, and a smaller inner shell.</desc>
         <defs>
           <linearGradient id="shellTopEC" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stop-color="#96A1B4"/>
@@ -251,62 +251,76 @@
           </radialGradient>
         </defs>
 
-        <!-- outer shell (larger, lateral side) -->
-        <rect x="50" y="130" width="190" height="150" rx="46" fill="url(#shellTopEC)" stroke="var(--ink)" stroke-width="2"/>
-        <path d="M 72 150 C 110 138 160 134 205 142" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.18"/>
+        <!-- 1. outer shell (larger, lateral side) -->
+        <rect x="30" y="130" width="180" height="150" rx="44" fill="url(#shellTopEC)" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M 50 150 C 86 138 134 134 176 142" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.18"/>
 
-        <!-- clear divider -->
-        <rect x="266" y="165" width="14" height="90" rx="7" fill="var(--surface)" stroke="var(--ink-3)" stroke-width="1" opacity="0.55"/>
+        <!-- 2. main board (shared with wrist pod) -->
+        <rect x="250" y="160" width="170" height="100" rx="8" fill="url(#pcbGradEC)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="266" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="286" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="306" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="326" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="346" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="366" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="386" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="406" cy="168" r="3" fill="var(--deep)"/>
+        <rect x="266" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
+        <rect x="362" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
+        <circle cx="335" cy="232" r="13" fill="none" stroke="var(--trace)" stroke-width="2"/>
+        <circle cx="335" cy="232" r="4" fill="var(--trace)"/>
 
-        <!-- main board (shared with wrist pod) -->
-        <rect x="316" y="160" width="170" height="100" rx="8" fill="url(#pcbGradEC)" stroke="var(--ink)" stroke-width="2"/>
-        <circle cx="332" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="352" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="372" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="392" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="412" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="432" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="452" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="472" cy="168" r="3" fill="var(--deep)"/>
-        <rect x="332" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
-        <rect x="428" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
-        <circle cx="401" cy="232" r="13" fill="none" stroke="var(--trace)" stroke-width="2"/>
-        <circle cx="401" cy="232" r="4" fill="var(--trace)"/>
+        <!-- 3. thin shell material, outer clip surface -->
+        <rect x="460" y="175" width="34" height="90" rx="10" fill="url(#shellBaseEC)" stroke="var(--ink)" stroke-width="1.5"/>
 
-        <!-- small board (inner, medial side) -->
-        <rect x="536" y="180" width="110" height="70" rx="6" fill="url(#pcbGradEC)" stroke="var(--ink)" stroke-width="2"/>
-        <circle cx="550" cy="188" r="2.4" fill="var(--deep)"/>
-        <circle cx="566" cy="188" r="2.4" fill="var(--deep)"/>
-        <circle cx="582" cy="188" r="2.4" fill="var(--deep)"/>
-        <circle cx="598" cy="188" r="2.4" fill="var(--deep)"/>
-        <rect x="548" y="200" width="26" height="20" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
-        <circle cx="611" cy="222" r="9" fill="none" stroke="var(--trace)" stroke-width="1.8"/>
-        <circle cx="611" cy="222" r="3" fill="var(--trace)"/>
+        <!-- 4. gap for the earlobe -->
+        <ellipse cx="562" cy="220" rx="28" ry="36" fill="none" stroke="var(--ink-3)" stroke-width="1.5" stroke-dasharray="4 5"/>
 
-        <!-- inner shell (smaller, medial side) -->
-        <rect x="700" y="145" width="150" height="120" rx="40" fill="url(#shellBaseEC)" stroke="var(--ink)" stroke-width="2"/>
-        <path d="M 718 160 C 745 150 780 147 810 153" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.16"/>
+        <!-- 5. thin shell material, inner clip surface -->
+        <rect x="630" y="175" width="34" height="90" rx="10" fill="url(#shellBaseEC)" stroke="var(--ink)" stroke-width="1.5"/>
+
+        <!-- 6. small board (inner, medial side) -->
+        <rect x="700" y="185" width="110" height="70" rx="6" fill="url(#pcbGradEC)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="714" cy="193" r="2.4" fill="var(--deep)"/>
+        <circle cx="730" cy="193" r="2.4" fill="var(--deep)"/>
+        <circle cx="746" cy="193" r="2.4" fill="var(--deep)"/>
+        <circle cx="762" cy="193" r="2.4" fill="var(--deep)"/>
+        <rect x="712" y="205" width="26" height="20" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
+        <circle cx="775" cy="227" r="9" fill="none" stroke="var(--trace)" stroke-width="1.8"/>
+        <circle cx="775" cy="227" r="3" fill="var(--trace)"/>
+
+        <!-- 7. inner shell (smaller, medial side) -->
+        <rect x="860" y="150" width="150" height="120" rx="40" fill="url(#shellBaseEC)" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M 878 165 C 905 155 940 152 970 158" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.16"/>
 
         <!-- floor glow -->
-        <ellipse cx="145" cy="322" rx="88" ry="13" fill="url(#floorGlowEC)"/>
-        <ellipse cx="401" cy="302" rx="88" ry="13" fill="url(#floorGlowEC)"/>
-        <ellipse cx="591" cy="292" rx="60" ry="11" fill="url(#floorGlowEC)"/>
-        <ellipse cx="775" cy="307" rx="80" ry="13" fill="url(#floorGlowEC)"/>
+        <ellipse cx="120" cy="322" rx="84" ry="13" fill="url(#floorGlowEC)"/>
+        <ellipse cx="335" cy="302" rx="88" ry="13" fill="url(#floorGlowEC)"/>
+        <ellipse cx="477" cy="308" rx="26" ry="9" fill="url(#floorGlowEC)"/>
+        <ellipse cx="647" cy="308" rx="26" ry="9" fill="url(#floorGlowEC)"/>
+        <ellipse cx="755" cy="297" rx="60" ry="11" fill="url(#floorGlowEC)"/>
+        <ellipse cx="935" cy="312" rx="80" ry="13" fill="url(#floorGlowEC)"/>
 
         <!-- captions -->
-        <text class="dg-label" x="145" y="356" text-anchor="middle">OUTER SHELL</text>
-        <text class="dg-sub" x="145" y="374" text-anchor="middle">Larger, lateral side</text>
+        <text class="dg-label" x="120" y="356" text-anchor="middle">OUTER SHELL</text>
+        <text class="dg-sub" x="120" y="374" text-anchor="middle">Larger, lateral side</text>
 
-        <text class="dg-label" x="401" y="336" text-anchor="middle">MAIN BOARD</text>
-        <text class="dg-sub" x="401" y="354" text-anchor="middle">Same board as the wrist pod</text>
+        <text class="dg-label" x="335" y="336" text-anchor="middle">MAIN BOARD</text>
+        <text class="dg-sub" x="335" y="354" text-anchor="middle">Same board as the wrist pod</text>
 
-        <text class="dg-label" x="591" y="316" text-anchor="middle">INNER BOARD</text>
-        <text class="dg-sub" x="591" y="334" text-anchor="middle">Smaller, medial side</text>
+        <text class="dg-sub" x="477" y="330" text-anchor="middle">CLIP SURFACE</text>
 
-        <text class="dg-label" x="775" y="341" text-anchor="middle">INNER SHELL</text>
-        <text class="dg-sub" x="775" y="359" text-anchor="middle">Smaller, medial side</text>
+        <text class="dg-sub" x="562" y="330" text-anchor="middle">EARLOBE SITS HERE</text>
+
+        <text class="dg-sub" x="647" y="330" text-anchor="middle">CLIP SURFACE</text>
+
+        <text class="dg-label" x="755" y="326" text-anchor="middle">INNER BOARD</text>
+        <text class="dg-sub" x="755" y="344" text-anchor="middle">Smaller, medial side</text>
+
+        <text class="dg-label" x="935" y="346" text-anchor="middle">INNER SHELL</text>
+        <text class="dg-sub" x="935" y="364" text-anchor="middle">Smaller, medial side</text>
       </svg>
-      <p class="dg-cap">Material on both sides: an outer shell and inner shell sandwich the two boards, clipping around the earlobe — transmission mode, light passing straight through.</p>
+      <p class="dg-cap">Seven parts, one clip: outer shell and board on one side, inner board and shell on the other, with two thin clip surfaces pinching the earlobe between them — transmission mode, light passing straight through.</p>
     </div>
 
     <div class="feat">
