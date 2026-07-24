@@ -14,8 +14,10 @@
     <nav>
       <span class="nav-group">
         <a href="/#problem">Problem</a>
+        <a href="/#pathway">Pathway</a>
         <a href="/#solution">Solution</a>
         <a href="/#market">Market</a>
+        <a href="/#differentiation">Differentiation</a>
         <a href="/#team">Team</a>
       </span>
       <span class="nav-sep" aria-hidden="true"></span>
@@ -139,16 +141,28 @@
   <div class="wrap">
     <p class="eyebrow">The model</p>
     <h2>Six features, one risk score — computed on the device itself.</h2>
-    <p class="lede" style="margin-top:20px">The wrist pod's controller doesn't just capture PPG — it runs the classifier. Six physiological features, derived from the dual-site pulse timing and pulse morphology, are combined into a single HFpEF risk score on board.</p>
+    <p class="lede" style="margin-top:20px">The wrist pod's controller doesn't just capture PPG — it runs the classifier. Six physiological features, derived from the dual-site pulse timing and pulse morphology, are combined into a single HFpEF risk score on board, updated continuously across the full 14-day wear period rather than as a one-off snapshot.</p>
 
     <div class="feat">
-      <div><h3>Pulse wave velocity</h3><p>The core signal: the Δt between wrist and ear arrival, converted to arterial stiffness.</p></div>
-      <div><h3>Pulse morphology</h3><p>Waveform shape at each site, not just timing — captured by the same two optical sensors.</p></div>
-      <div><h3>Rhythm &amp; AF detection</h3><p>Atrial fibrillation, a common HFpEF comorbidity, flagged from pulse rhythm over the 14-day window.</p></div>
+      <div><h3>Pulse wave velocity</h3><p>The core signal: the Δt between wrist and ear arrival, converted to arterial stiffness — the earliest marker in the cascade, and the one no BP cuff can see.</p></div>
+      <div><h3>Pulse morphology</h3><p>Waveform shape at each site, not just timing — the upstroke, dicrotic notch and decay of the pulse, compared wrist-to-ear rather than read in isolation.</p></div>
+      <div><h3>Rhythm &amp; AF detection</h3><p>Atrial fibrillation, a common HFpEF comorbidity, flagged from pulse rhythm over the full 14-day window — without an ECG channel.</p></div>
+      <div><h3>Signal quality &amp; calibration</h3><p>Three optical wavelengths correct for skin-tone effects before a single feature is computed — the fix is built into the sensor, not bolted on afterwards.</p></div>
     </div>
 
-    <p class="statement" style="margin-top:36px">Edge AI, not cloud AI: the model runs on the wearable itself.</p>
-    <p class="lede" style="margin-top:20px">No raw PPG has to leave the device to be classified. The risk score is generated on board, continuously, without a connectivity dependency and without streaming two weeks of raw biosensor data off the patient's wrist.</p>
+    <div class="block" style="margin-top:56px">
+      <p class="eyebrow">Edge AI</p>
+      <h2 class="sub" style="margin:12px 0 20px">Inference happens on the wearable, not in the cloud.</h2>
+      <p class="lede">Most consumer wearables capture raw sensor data and classify it remotely — on a phone or a server. Ours doesn't have to. The six-feature model is small enough to run directly on the wrist pod's own controller, so the risk score exists the moment the pulse data does: no upload, no server round trip, no dependency on anything beyond the device itself.</p>
+
+      <div class="feat">
+        <div><h3>Battery across 14 days</h3><p>Radio, not compute, is usually what drains a wearable — streaming two weeks of continuous high-frequency PPG over BLE is expensive. Classifying locally and syncing only a compact result is what makes two weeks on one charge realistic.</p></div>
+        <div><h3>Works without connectivity</h3><p>Risk scoring doesn't pause when a phone is out of range or BLE drops. The model keeps running on-device; only the sync to a companion app has to wait.</p></div>
+        <div><h3>Less raw data ever leaves the device</h3><p>Two weeks of raw biosensor data is sensitive by nature. Classifying on board means a risk score can be reported without needing to export the underlying waveform at all.</p></div>
+        <div><h3>Instant, not batched</h3><p>An AF episode or a stiffness trend is flagged as it happens, not hours later after a batch upload and a server-side inference queue.</p></div>
+        <div><h3>Harder to copy</h3><p>Replicating this requires both the two-site hardware and a validated embedded classifier that fits a wearable's power and memory budget — not just a cloud pipeline bolted onto a generic sensor.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
