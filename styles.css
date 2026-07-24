@@ -128,11 +128,13 @@ section{padding:clamp(84px,11vw,150px) 0;border-bottom:1px solid var(--rule)}
 .dg-tick{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;fill:var(--ink-3)}
 .dg-dt{font-family:var(--sans);font-size:17px;font-weight:700;fill:var(--trace)}
 .dg-hub{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.13em;fill:var(--ink)}
+.dg-cap{margin-top:20px;font-size:.92rem;line-height:1.5;color:var(--ink-2);max-width:var(--measure)}
 
 .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(24px,3.5vw,40px);margin-top:40px}
 .person{padding-top:18px;border-top:1px solid var(--rule)}
 .person h3{margin-bottom:7px}
 .person p{font-size:.92rem;line-height:1.5;color:var(--ink-2)}
+.person p.inst{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--deep);margin-top:6px}
 
 footer{padding:36px 0 56px;font-size:.82rem;color:var(--ink-3);font-family:var(--mono);letter-spacing:.03em;line-height:1.7}
 footer .fbar{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-between;align-items:baseline}

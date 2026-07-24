@@ -80,6 +80,43 @@
     <p class="lede" style="margin-top:20px">A chest hub and two optical sensors — wrist and earlobe — sharing one hardware clock. The gap between the pulse arriving at each site is timed to sub-millisecond precision, and an onboard model turns that into an HFpEF risk score. No cuff, no needle, no clinic visit.</p>
 
     <div class="diagram">
+      <svg viewBox="0 0 620 400" role="img" aria-labelledby="wgtitle wgdesc">
+        <title id="wgtitle">Vascora Health worn on the body</title>
+        <desc id="wgdesc">A simplified figure showing the three components in place: an earlobe clip at the ear, a chest hub strapped across the chest, and a wrist pod at the wrist.</desc>
+
+        <circle cx="250" cy="64" r="38" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
+        <rect x="180" y="108" width="140" height="210" rx="46" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
+
+        <path d="M 190 128 L 140 330" fill="none" stroke="var(--ink)" stroke-width="34" stroke-linecap="round"/>
+        <path d="M 190 128 L 140 330" fill="none" stroke="var(--surface-2)" stroke-width="30" stroke-linecap="round"/>
+        <path d="M 310 128 L 360 330" fill="none" stroke="var(--ink)" stroke-width="34" stroke-linecap="round"/>
+        <path d="M 310 128 L 360 330" fill="none" stroke="var(--surface-2)" stroke-width="30" stroke-linecap="round"/>
+
+        <line x1="180" y1="178" x2="320" y2="178" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <rect x="220" y="160" width="60" height="36" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/>
+
+        <circle cx="286" cy="70" r="10" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
+        <circle cx="286" cy="70" r="3.5" fill="var(--deep)"/>
+
+        <circle cx="360" cy="330" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
+        <circle cx="360" cy="330" r="4" fill="var(--deep)"/>
+
+        <line x1="296" y1="68" x2="430" y2="60" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+        <text class="dg-label" x="440" y="56">EARLOBE CLIP</text>
+        <text class="dg-sub" x="440" y="74">Transmission mode</text>
+
+        <line x1="320" y1="178" x2="430" y2="174" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+        <text class="dg-label" x="440" y="170">CHEST HUB</text>
+        <text class="dg-sub" x="440" y="188">ML model · BLE · battery</text>
+
+        <line x1="372" y1="330" x2="430" y2="330" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+        <text class="dg-label" x="440" y="326">WRIST POD</text>
+        <text class="dg-sub" x="440" y="344">Reflectance mode</text>
+      </svg>
+      <p class="dg-cap">Worn, not implanted: the same three parts — earlobe clip, chest hub, wrist pod — shown in place on the body.</p>
+    </div>
+
+    <div class="diagram">
       <svg viewBox="0 0 1000 400" role="img" aria-labelledby="dgtitle dgdesc">
         <title id="dgtitle">Vascora Health wrist-to-ear PPG architecture</title>
         <desc id="dgdesc">A pulse leaves the heart and travels two arterial paths of different length, arriving first at the earlobe clip and then at the wrist pod. A chest hub, connected to both sensors by a shared hardware clock, runs the machine-learning risk model on board. The difference between the two arrival times is shown as delta t.</desc>
@@ -163,19 +200,18 @@
     <h2>Turning world-leading research into life-saving tech.</h2>
 
     <div class="people">
-      <div class="person"><h3>Pranav Sharma</h3><p>MEng Electrical &amp; Information Engineering</p></div>
-      <div class="person"><h3>Abhi Kapoor</h3><p>MEng Electrical &amp; Electronic Engineering</p></div>
-      <div class="person"><h3>Krish Thakrar</h3><p>MEng Mechanical Engineering</p></div>
-      <div class="person"><h3>Anjali Ketan</h3><p>Medical Biosciences with Management</p></div>
-      <div class="person"><h3>Joshika Manikandan</h3><p>Chemistry</p></div>
+      <div class="person"><h3>Pranav Sharma</h3><p>MEng Electrical &amp; Information Engineering</p><p class="inst">Imperial College London</p></div>
+      <div class="person"><h3>Abhi Kapoor</h3><p>MEng Electrical &amp; Electronic Engineering</p><p class="inst">Imperial College London</p></div>
+      <div class="person"><h3>Krish Thakrar</h3><p>MEng Mechanical Engineering</p><p class="inst">Imperial College London</p></div>
+      <div class="person"><h3>Anjali Ketan</h3><p>Medical Biosciences with Management</p><p class="inst">Imperial College London</p></div>
+      <div class="person"><h3>Joshika Manikandan</h3><p>Chemistry</p><p class="inst">Imperial College London</p></div>
     </div>
-    <p class="small" style="margin-top:6px">Imperial College London</p>
 
-    <div class="people" style="margin-top:36px">
-      <div class="person"><h3>Dr. Kim H. Parker</h3><p>Emeritus Professor, Bioengineering — pioneer of wave-intensity analysis, the physics behind our approach.</p></div>
-      <div class="person"><h3>Dr. Sonali Parbhoo</h3><p>Assistant Professor, AI for Actionable Impact Lab — interpretable AI for clinical decisions.</p></div>
+    <p class="small" style="margin-top:36px">Advisory faculty</p>
+    <div class="people" style="margin-top:12px">
+      <div class="person"><h3>Dr. Kim H. Parker</h3><p>Emeritus Professor, Bioengineering — pioneer of wave-intensity analysis, the physics behind our approach.</p><p class="inst">Princeton University · Imperial College London</p></div>
+      <div class="person"><h3>Dr. Sonali Parbhoo</h3><p>Assistant Professor, AI for Actionable Impact Lab — interpretable AI for clinical decisions.</p><p class="inst">Harvard University · Imperial College London</p></div>
     </div>
-    <p class="small" style="margin-top:6px">Advisory faculty</p>
   </div>
 </section>
 
