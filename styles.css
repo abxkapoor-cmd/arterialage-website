@@ -63,9 +63,14 @@ header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--groun
 .bar{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px}
 .logo{font-family:var(--sans);font-weight:700;letter-spacing:-.03em;font-size:1.1rem;text-decoration:none;color:inherit}
 .logo b{font-weight:400;color:var(--trace)}
-nav{display:flex;gap:26px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+nav{display:flex;align-items:center;gap:26px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+.nav-group{display:flex;gap:26px}
 nav a{color:var(--ink-3);text-decoration:none;transition:color .15s}
-nav a:hover,nav a[aria-current="page"]{color:var(--trace)}
+nav a:hover,nav a[aria-current="page"]{color:var(--ink)}
+.nav-sep{width:1px;height:16px;background:var(--rule)}
+nav a.nav-out{color:var(--trace);font-weight:600}
+nav a.nav-out:hover{color:var(--trace-2)}
+nav a.nav-out[aria-current="page"]{color:var(--trace-2)}
 @media(max-width:720px){nav{display:none}}
 
 .crumb{padding:20px 0;border-bottom:1px solid var(--rule)}

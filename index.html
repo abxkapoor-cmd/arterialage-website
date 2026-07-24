@@ -12,11 +12,14 @@
   <div class="wrap bar">
     <a class="logo" href="/">Vascora<b> Health</b></a>
     <nav>
-      <a href="#problem">Problem</a>
-      <a href="#solution">Solution</a>
-      <a href="#market">Market</a>
-      <a href="#team">Team</a>
-      <a href="/product">The Product</a>
+      <span class="nav-group">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#market">Market</a>
+        <a href="#team">Team</a>
+      </span>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a href="/product" class="nav-out">The Product ↗</a>
     </nav>
   </div>
 </header>
@@ -78,104 +81,8 @@
   <div class="wrap">
     <p class="eyebrow">The solution</p>
     <h2>A wearable that watches your arteries — not just your pulse.</h2>
-    <p class="lede" style="margin-top:20px">A chest hub and two optical sensors — wrist and earlobe — sharing one hardware clock. The gap between the pulse arriving at each site is timed to sub-millisecond precision, and an onboard model turns that into an HFpEF risk score. No cuff, no needle, no clinic visit.</p>
-
-    <div class="diagram">
-      <svg viewBox="0 0 620 400" role="img" aria-labelledby="wgtitle wgdesc">
-        <title id="wgtitle">Vascora Health worn on the body</title>
-        <desc id="wgdesc">A simplified figure showing the three components in place: an earlobe clip at the ear, a chest hub strapped across the chest, and a wrist pod at the wrist.</desc>
-
-        <circle cx="250" cy="64" r="38" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
-        <rect x="180" y="108" width="140" height="210" rx="46" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
-
-        <path d="M 190 128 L 140 330" fill="none" stroke="var(--ink)" stroke-width="34" stroke-linecap="round"/>
-        <path d="M 190 128 L 140 330" fill="none" stroke="var(--surface-2)" stroke-width="30" stroke-linecap="round"/>
-        <path d="M 310 128 L 360 330" fill="none" stroke="var(--ink)" stroke-width="34" stroke-linecap="round"/>
-        <path d="M 310 128 L 360 330" fill="none" stroke="var(--surface-2)" stroke-width="30" stroke-linecap="round"/>
-
-        <line x1="180" y1="178" x2="320" y2="178" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
-        <rect x="220" y="160" width="60" height="36" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/>
-
-        <circle cx="286" cy="70" r="10" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
-        <circle cx="286" cy="70" r="3.5" fill="var(--deep)"/>
-
-        <circle cx="360" cy="330" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
-        <circle cx="360" cy="330" r="4" fill="var(--deep)"/>
-
-        <line x1="296" y1="68" x2="430" y2="60" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <text class="dg-label" x="440" y="56">EARLOBE CLIP</text>
-        <text class="dg-sub" x="440" y="74">Transmission mode</text>
-
-        <line x1="320" y1="178" x2="430" y2="174" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <text class="dg-label" x="440" y="170">CHEST HUB</text>
-        <text class="dg-sub" x="440" y="188">ML model · BLE · battery</text>
-
-        <line x1="372" y1="330" x2="430" y2="330" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <text class="dg-label" x="440" y="326">WRIST POD</text>
-        <text class="dg-sub" x="440" y="344">Reflectance mode</text>
-      </svg>
-      <p class="dg-cap">Worn, not implanted: the same three parts — earlobe clip, chest hub, wrist pod — shown in place on the body.</p>
-    </div>
-
-    <div class="diagram">
-      <svg viewBox="0 0 1000 400" role="img" aria-labelledby="dgtitle dgdesc">
-        <title id="dgtitle">Vascora Health wrist-to-ear PPG architecture</title>
-        <desc id="dgdesc">A pulse leaves the heart and travels two arterial paths of different length, arriving first at the earlobe clip and then at the wrist pod. A chest hub, connected to both sensors by a shared hardware clock, runs the machine-learning risk model on board. The difference between the two arrival times is shown as delta t.</desc>
-
-        <path class="draw-path" d="M 66 204 C 170 152 250 112 392 106" fill="none" stroke="var(--trace)" stroke-width="2"/>
-        <path class="draw-path" d="M 66 216 C 170 272 250 312 392 318" fill="none" stroke="var(--trace)" stroke-width="2"/>
-
-        <circle cx="58" cy="210" r="7" fill="var(--trace)"/>
-        <text class="dg-tick" x="58" y="244" text-anchor="middle">HEART</text>
-
-        <line x1="290" y1="180" x2="392" y2="118" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
-        <line x1="290" y1="244" x2="392" y2="306" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
-
-        <rect x="176" y="180" width="196" height="64" rx="3" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="1.5"/>
-        <text class="dg-hub" x="274" y="206" text-anchor="middle">CHEST HUB</text>
-        <text class="dg-sub" x="274" y="226" text-anchor="middle">ML MODEL · BLE · BATTERY</text>
-
-        <circle cx="404" cy="106" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
-        <circle cx="404" cy="106" r="4" fill="var(--deep)"/>
-        <text class="dg-label" x="430" y="102">EARLOBE CLIP</text>
-        <text class="dg-sub" x="430" y="122">Transmission mode</text>
-
-        <circle cx="404" cy="318" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
-        <circle cx="404" cy="318" r="4" fill="var(--deep)"/>
-        <text class="dg-label" x="430" y="314">WRIST POD</text>
-        <text class="dg-sub" x="430" y="334">Reflectance mode</text>
-
-        <text class="dg-sub" x="430" y="212">SHARED HARDWARE CLOCK</text>
-
-        <line x1="614" y1="56" x2="614" y2="372" stroke="var(--rule)" stroke-width="1"/>
-
-        <text class="dg-tick" x="656" y="76">TIMING READOUT</text>
-
-        <text class="dg-tick" x="656" y="142">EAR</text>
-        <path class="draw-path" d="M 656 190 L 690 190 C 704 190 710 182 716 132 C 720 118 730 120 736 144 C 742 164 746 160 754 158 C 762 156 766 168 774 174 C 786 182 796 188 810 190 L 964 190"
-              fill="none" stroke="var(--trace)" stroke-width="1.8" stroke-linejoin="round"/>
-
-        <text class="dg-tick" x="656" y="258">WRIST</text>
-        <path class="draw-path" d="M 656 306 L 760 306 C 774 306 780 298 786 248 C 790 234 800 236 806 260 C 812 280 816 276 824 274 C 832 272 836 284 844 290 C 856 298 866 304 880 306 L 964 306"
-              fill="none" stroke="var(--trace)" stroke-width="1.8" stroke-linejoin="round"/>
-
-        <line x1="717" y1="118" x2="717" y2="336" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <line x1="787" y1="118" x2="787" y2="336" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-
-        <line x1="717" y1="352" x2="787" y2="352" stroke="var(--trace)" stroke-width="1.5"/>
-        <path d="M 717 352 l 8 -4 v 8 z" fill="var(--trace)"/>
-        <path d="M 787 352 l -8 -4 v 8 z" fill="var(--trace)"/>
-        <text class="dg-dt" x="752" y="342" text-anchor="middle">Δt</text>
-
-        <text class="dg-sub" x="812" y="357">→ PULSE WAVE VELOCITY</text>
-      </svg>
-    </div>
-
-    <div class="feat">
-      <div><h3>14 days, worn at home</h3><p>Posted out, worn, returned — then cleaned and redeployed to the next patient.</p></div>
-      <div><h3>Additive, not disruptive</h3><p>Sits before ECG and echo. Replaces nothing already in the pathway.</p></div>
-      <div><h3>Earlier therapy, fewer admissions</h3><p>Earlier detection means earlier SGLT2 treatment — worth ~26% fewer hospitalisations.</p></div>
-    </div>
+    <p class="lede" style="margin-top:20px">A chest hub and two optical sensors — wrist and earlobe — sharing one hardware clock, timing the pulse between the two sites to sub-millisecond precision. No cuff, no needle, no clinic visit.</p>
+    <p class="statement" style="margin-top:36px">See how it works and the hardware itself on <a href="/product" style="color:var(--trace);text-decoration:underline">the product page ↗</a></p>
   </div>
 </section>
 

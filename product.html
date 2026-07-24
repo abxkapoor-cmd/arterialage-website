@@ -12,11 +12,14 @@
   <div class="wrap bar">
     <a class="logo" href="/">Vascora<b> Health</b></a>
     <nav>
-      <a href="/#problem">Problem</a>
-      <a href="/#solution">Solution</a>
-      <a href="/#market">Market</a>
-      <a href="/#team">Team</a>
-      <a href="/product" aria-current="page">The Product</a>
+      <span class="nav-group">
+        <a href="/#problem">Problem</a>
+        <a href="/#solution">Solution</a>
+        <a href="/#market">Market</a>
+        <a href="/#team">Team</a>
+      </span>
+      <span class="nav-sep" aria-hidden="true"></span>
+      <a href="/product" class="nav-out" aria-current="page">The Product ↗</a>
     </nav>
   </div>
 </header>
@@ -27,149 +30,194 @@
 
 <main>
 
-<section id="wrist-pod" style="border-bottom:0">
+<section id="how-it-works">
   <div class="wrap">
-    <p class="eyebrow">Hardware · Wrist pod</p>
-    <h2>One board, exploded.</h2>
-    <p class="lede" style="margin-top:20px">The wrist pod is a three-part assembly: a top shell, the main board, and a base shell with an optical window aligned to the PPG sensor. Below is the actual board — not a mockup.</p>
+    <p class="eyebrow">How it works</p>
+    <h2>A wearable that watches your arteries — not just your pulse.</h2>
+    <p class="lede" style="margin-top:20px">A chest hub and two optical sensors — wrist and earlobe — sharing one hardware clock. The gap between the pulse arriving at each site is timed to sub-millisecond precision, and an onboard model turns that into an HFpEF risk score. No cuff, no needle, no clinic visit.</p>
 
     <div class="diagram">
-      <svg viewBox="0 0 820 820" role="img" aria-labelledby="wptitle wpdesc">
-        <title id="wptitle">Vascora Health wrist pod, exploded view</title>
-        <desc id="wpdesc">An exploded diagram of the wrist pod showing a top shell, the main circuit board with its key components — two QFP ICs, a small BGA controller, a diode, a large optical PPG emitter and detector module, an unpopulated secondary LED footprint, and a small regulator IC — and a base shell with an optical window aligned to the sensor, worn against the skin.</desc>
+      <svg viewBox="0 0 620 400" role="img" aria-labelledby="wgtitle wgdesc">
+        <title id="wgtitle">Vascora Health worn on the body</title>
+        <desc id="wgdesc">A simplified figure showing the three components in place: an earlobe clip at the ear, a chest hub strapped across the chest, and a wrist pod at the wrist.</desc>
 
-        <!-- top shell -->
-        <rect x="180" y="50" width="260" height="86" rx="43" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
-        <rect x="160" y="76" width="24" height="32" rx="6" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
-        <rect x="416" y="76" width="24" height="32" rx="6" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
-        <line x1="440" y1="93" x2="560" y2="90" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <text class="dg-label" x="570" y="86">TOP SHELL</text>
-        <text class="dg-sub" x="570" y="104">Injection-moulded, snaps to strap</text>
+        <circle cx="250" cy="64" r="38" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
+        <rect x="180" y="108" width="140" height="210" rx="46" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
 
-        <!-- shell -> board connectors -->
-        <line x1="230" y1="136" x2="230" y2="196" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <line x1="310" y1="136" x2="310" y2="196" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <line x1="390" y1="136" x2="390" y2="196" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+        <path d="M 190 128 L 140 330" fill="none" stroke="var(--ink)" stroke-width="34" stroke-linecap="round"/>
+        <path d="M 190 128 L 140 330" fill="none" stroke="var(--surface-2)" stroke-width="30" stroke-linecap="round"/>
+        <path d="M 310 128 L 360 330" fill="none" stroke="var(--ink)" stroke-width="34" stroke-linecap="round"/>
+        <path d="M 310 128 L 360 330" fill="none" stroke="var(--surface-2)" stroke-width="30" stroke-linecap="round"/>
 
-        <!-- board -->
-        <rect x="200" y="196" width="220" height="430" rx="10" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
+        <line x1="180" y1="178" x2="320" y2="178" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <rect x="220" y="160" width="60" height="36" rx="3" fill="var(--surface)" stroke="var(--ink)" stroke-width="1.5"/>
 
-        <!-- top castellated header -->
-        <circle cx="215" cy="210" r="5" fill="var(--surface)" stroke="var(--deep)" stroke-width="1.3"/>
-        <circle cx="236" cy="210" r="5" fill="var(--surface)" stroke="var(--deep)" stroke-width="1.3"/>
-        <circle cx="257" cy="210" r="5" fill="var(--surface)" stroke="var(--deep)" stroke-width="1.3"/>
-        <circle cx="278" cy="210" r="5" fill="var(--surface)" stroke="var(--deep)" stroke-width="1.3"/>
-        <circle cx="299" cy="210" r="5" fill="var(--surface)" stroke="var(--deep)" stroke-width="1.3"/>
-        <circle cx="320" cy="210" r="5" fill="var(--surface)" stroke="var(--deep)" stroke-width="1.3"/>
-        <circle cx="341" cy="210" r="5" fill="var(--surface)" stroke="var(--deep)" stroke-width="1.3"/>
-        <circle cx="362" cy="210" r="5" fill="var(--surface)" stroke="var(--deep)" stroke-width="1.3"/>
-        <circle cx="383" cy="210" r="5" fill="var(--surface)" stroke="var(--deep)" stroke-width="1.3"/>
-        <circle cx="404" cy="210" r="5" fill="var(--surface)" stroke="var(--deep)" stroke-width="1.3"/>
-        <rect x="208" y="222" width="16" height="9" rx="2" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
-        <rect x="396" y="222" width="16" height="9" rx="2" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+        <circle cx="286" cy="70" r="10" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
+        <circle cx="286" cy="70" r="3.5" fill="var(--deep)"/>
 
-        <!-- IC2 / IC3 -->
-        <rect x="230" y="250" width="68" height="56" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="224" y1="260" x2="230" y2="260" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="224" y1="272" x2="230" y2="272" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="224" y1="284" x2="230" y2="284" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="224" y1="296" x2="230" y2="296" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="298" y1="260" x2="304" y2="260" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="298" y1="272" x2="304" y2="272" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="298" y1="284" x2="304" y2="284" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="298" y1="296" x2="304" y2="296" stroke="var(--ink)" stroke-width="1.5"/>
-        <text class="dg-sub" x="264" y="282" text-anchor="middle">IC2</text>
+        <circle cx="360" cy="330" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
+        <circle cx="360" cy="330" r="4" fill="var(--deep)"/>
 
-        <rect x="316" y="250" width="68" height="56" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="310" y1="260" x2="316" y2="260" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="310" y1="272" x2="316" y2="272" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="310" y1="284" x2="316" y2="284" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="310" y1="296" x2="316" y2="296" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="384" y1="260" x2="390" y2="260" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="384" y1="272" x2="390" y2="272" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="384" y1="284" x2="390" y2="284" stroke="var(--ink)" stroke-width="1.5"/>
-        <line x1="384" y1="296" x2="390" y2="296" stroke="var(--ink)" stroke-width="1.5"/>
-        <text class="dg-sub" x="350" y="282" text-anchor="middle">IC3</text>
+        <line x1="296" y1="68" x2="430" y2="60" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+        <text class="dg-label" x="440" y="56">EARLOBE CLIP</text>
+        <text class="dg-sub" x="440" y="74">Transmission mode</text>
 
-        <rect x="214" y="260" width="14" height="8" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
-        <rect x="304" y="250" width="14" height="8" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
-        <rect x="390" y="260" width="14" height="8" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
-        <rect x="304" y="312" width="14" height="8" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+        <line x1="320" y1="178" x2="430" y2="174" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+        <text class="dg-label" x="440" y="170">CHEST HUB</text>
+        <text class="dg-sub" x="440" y="188">ML model · BLE · battery</text>
 
-        <!-- IC1 -->
-        <rect x="222" y="330" width="32" height="32" fill="none" stroke="var(--ink)" stroke-width="1.2"/>
-        <circle cx="230" cy="338" r="1.6" fill="var(--ink-3)"/><circle cx="238" cy="338" r="1.6" fill="var(--ink-3)"/><circle cx="246" cy="338" r="1.6" fill="var(--ink-3)"/>
-        <circle cx="230" cy="346" r="1.6" fill="var(--ink-3)"/><circle cx="238" cy="346" r="1.6" fill="var(--ink-3)"/><circle cx="246" cy="346" r="1.6" fill="var(--ink-3)"/>
-        <circle cx="230" cy="354" r="1.6" fill="var(--ink-3)"/><circle cx="238" cy="354" r="1.6" fill="var(--ink-3)"/><circle cx="246" cy="354" r="1.6" fill="var(--ink-3)"/>
-        <text class="dg-sub" x="238" y="376" text-anchor="middle">IC1</text>
+        <line x1="372" y1="330" x2="430" y2="330" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+        <text class="dg-label" x="440" y="326">WRIST POD</text>
+        <text class="dg-sub" x="440" y="344">Reflectance mode</text>
+      </svg>
+      <p class="dg-cap">Worn, not implanted: the same three parts — earlobe clip, chest hub, wrist pod — shown in place on the body.</p>
+    </div>
 
-        <!-- D1 -->
-        <rect x="290" y="333" width="50" height="24" rx="12" fill="none" stroke="var(--ink)" stroke-width="1.3"/>
-        <path d="M 308 345 L 322 338 L 322 352 Z M 322 338 L 322 352" fill="none" stroke="var(--ink-2)" stroke-width="1.3"/>
-        <text class="dg-sub" x="315" y="326" text-anchor="middle">D1</text>
+    <div class="diagram">
+      <svg viewBox="0 0 1000 400" role="img" aria-labelledby="dgtitle dgdesc">
+        <title id="dgtitle">Vascora Health wrist-to-ear PPG architecture</title>
+        <desc id="dgdesc">A pulse leaves the heart and travels two arterial paths of different length, arriving first at the earlobe clip and then at the wrist pod. A chest hub, connected to both sensors by a shared hardware clock, runs the machine-learning risk model on board. The difference between the two arrival times is shown as delta t.</desc>
 
-        <rect x="208" y="345" width="12" height="7" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
-        <rect x="266" y="366" width="12" height="7" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
-        <rect x="352" y="366" width="12" height="7" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
+        <path class="draw-path" d="M 66 204 C 170 152 250 112 392 106" fill="none" stroke="var(--trace)" stroke-width="2"/>
+        <path class="draw-path" d="M 66 216 C 170 272 250 312 392 318" fill="none" stroke="var(--trace)" stroke-width="2"/>
 
-        <!-- LED1 : optical module -->
-        <rect x="258" y="372" width="84" height="84" rx="6" fill="var(--surface)" stroke="var(--deep)" stroke-width="2"/>
-        <circle cx="300" cy="414" r="28" fill="none" stroke="var(--trace)" stroke-width="2"/>
-        <circle cx="300" cy="414" r="6" fill="var(--trace)"/>
-        <line x1="342" y1="400" x2="440" y2="380" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <text class="dg-label" x="450" y="376">LED1 · OPTICAL MODULE</text>
-        <text class="dg-sub" x="450" y="394">PPG emitter + detector, reflectance mode</text>
+        <circle cx="58" cy="210" r="7" fill="var(--trace)"/>
+        <text class="dg-tick" x="58" y="244" text-anchor="middle">HEART</text>
 
-        <!-- LED2 : unpopulated -->
-        <rect x="352" y="392" width="36" height="36" fill="none" stroke="var(--ink-3)" stroke-width="1.2" stroke-dasharray="3 3"/>
-        <line x1="388" y1="410" x2="440" y2="440" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <text class="dg-label" x="450" y="436">LED2</text>
-        <text class="dg-sub" x="450" y="454">Unpopulated — future variant</text>
+        <line x1="290" y1="180" x2="392" y2="118" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <line x1="290" y1="244" x2="392" y2="306" stroke="var(--deep)" stroke-width="1.5" stroke-dasharray="4 4"/>
 
-        <!-- U1 -->
-        <rect x="290" y="472" width="26" height="16" fill="none" stroke="var(--ink)" stroke-width="1.2"/>
-        <rect x="270" y="472" width="12" height="8" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
-        <rect x="322" y="472" width="12" height="8" fill="none" stroke="var(--ink-3)" stroke-width="1"/>
-        <text class="dg-sub" x="303" y="504" text-anchor="middle">U1</text>
+        <rect x="176" y="180" width="196" height="64" rx="3" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="1.5"/>
+        <text class="dg-hub" x="274" y="206" text-anchor="middle">CHEST HUB</text>
+        <text class="dg-sub" x="274" y="226" text-anchor="middle">ML MODEL · BLE · BATTERY</text>
 
-        <!-- mounting + header pads -->
-        <circle cx="224" cy="524" r="7" fill="none" stroke="var(--ink-3)" stroke-width="1.3"/>
-        <circle cx="224" cy="549" r="7" fill="none" stroke="var(--ink-3)" stroke-width="1.3"/>
-        <circle cx="224" cy="574" r="7" fill="none" stroke="var(--ink-3)" stroke-width="1.3"/>
-        <rect x="360" y="560" width="12" height="12" fill="none" stroke="var(--ink-3)" stroke-width="1.2"/>
-        <rect x="382" y="560" width="12" height="12" fill="none" stroke="var(--ink-3)" stroke-width="1.2"/>
-        <rect x="404" y="560" width="12" height="12" fill="none" stroke="var(--ink-3)" stroke-width="1.2"/>
-        <rect x="360" y="582" width="12" height="12" fill="none" stroke="var(--ink-3)" stroke-width="1.2"/>
+        <circle cx="404" cy="106" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
+        <circle cx="404" cy="106" r="4" fill="var(--deep)"/>
+        <text class="dg-label" x="430" y="102">EARLOBE CLIP</text>
+        <text class="dg-sub" x="430" y="122">Transmission mode</text>
 
-        <!-- silkscreen -->
-        <text class="dg-sub" x="310" y="614" text-anchor="middle" style="font-size:9.5px">VASCORA HEALTH · MAIN BOARD V1</text>
+        <circle cx="404" cy="318" r="12" fill="var(--surface)" stroke="var(--deep)" stroke-width="2.5"/>
+        <circle cx="404" cy="318" r="4" fill="var(--deep)"/>
+        <text class="dg-label" x="430" y="314">WRIST POD</text>
+        <text class="dg-sub" x="430" y="334">Reflectance mode</text>
 
-        <line x1="420" y1="280" x2="560" y2="250" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <text class="dg-label" x="570" y="246">MAIN BOARD</text>
-        <text class="dg-sub" x="570" y="264">6-feature model · BLE · battery</text>
+        <text class="dg-sub" x="430" y="212">SHARED HARDWARE CLOCK</text>
 
-        <!-- board -> base connectors -->
-        <line x1="230" y1="626" x2="230" y2="666" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <line x1="310" y1="626" x2="310" y2="666" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <line x1="390" y1="626" x2="390" y2="666" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="614" y1="56" x2="614" y2="372" stroke="var(--rule)" stroke-width="1"/>
+
+        <text class="dg-tick" x="656" y="76">TIMING READOUT</text>
+
+        <text class="dg-tick" x="656" y="142">EAR</text>
+        <path class="draw-path" d="M 656 190 L 690 190 C 704 190 710 182 716 132 C 720 118 730 120 736 144 C 742 164 746 160 754 158 C 762 156 766 168 774 174 C 786 182 796 188 810 190 L 964 190"
+              fill="none" stroke="var(--trace)" stroke-width="1.8" stroke-linejoin="round"/>
+
+        <text class="dg-tick" x="656" y="258">WRIST</text>
+        <path class="draw-path" d="M 656 306 L 760 306 C 774 306 780 298 786 248 C 790 234 800 236 806 260 C 812 280 816 276 824 274 C 832 272 836 284 844 290 C 856 298 866 304 880 306 L 964 306"
+              fill="none" stroke="var(--trace)" stroke-width="1.8" stroke-linejoin="round"/>
+
+        <line x1="717" y1="118" x2="717" y2="336" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="787" y1="118" x2="787" y2="336" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
+
+        <line x1="717" y1="352" x2="787" y2="352" stroke="var(--trace)" stroke-width="1.5"/>
+        <path d="M 717 352 l 8 -4 v 8 z" fill="var(--trace)"/>
+        <path d="M 787 352 l -8 -4 v 8 z" fill="var(--trace)"/>
+        <text class="dg-dt" x="752" y="342" text-anchor="middle">Δt</text>
+
+        <text class="dg-sub" x="812" y="357">→ PULSE WAVE VELOCITY</text>
+      </svg>
+    </div>
+
+    <div class="feat">
+      <div><h3>14 days, worn at home</h3><p>Posted out, worn, returned — then cleaned and redeployed to the next patient.</p></div>
+      <div><h3>Additive, not disruptive</h3><p>Sits before ECG and echo. Replaces nothing already in the pathway.</p></div>
+      <div><h3>Earlier therapy, fewer admissions</h3><p>Earlier detection means earlier SGLT2 treatment — worth ~26% fewer hospitalisations.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="hardware" style="border-bottom:0">
+  <div class="wrap">
+    <p class="eyebrow">Hardware · Wrist pod</p>
+    <h2>The wrist pod, exploded.</h2>
+    <p class="lede" style="margin-top:20px">Strap, base shell, board, top shell — the wrist pod is four parts. The base shell's window sits directly over the board's optical module, against the skin.</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 920 460" role="img" aria-labelledby="hwtitle hwdesc">
+        <title id="hwtitle">Vascora Health wrist pod hardware, exploded</title>
+        <desc id="hwdesc">An exploded product view of the wrist pod in four parts, left to right: a silicone strap, a base shell with an optical window, the main circuit board, and a top shell.</desc>
+        <defs>
+          <linearGradient id="shellTop" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#96A1B4"/>
+            <stop offset="1" stop-color="#4A5468"/>
+          </linearGradient>
+          <linearGradient id="shellBase" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#69748A"/>
+            <stop offset="1" stop-color="#2B3240"/>
+          </linearGradient>
+          <linearGradient id="pcbGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#25352B"/>
+            <stop offset="1" stop-color="#121C16"/>
+          </linearGradient>
+          <radialGradient id="floorGlow" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
+            <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- strap -->
+        <path d="M 170 90 C 90 90 55 150 55 210 C 55 270 90 330 170 330" fill="none" stroke="var(--ink)" stroke-width="40" stroke-linecap="round"/>
+        <path d="M 170 90 C 90 90 55 150 55 210 C 55 270 90 330 170 330" fill="none" stroke="url(#shellBase)" stroke-width="34" stroke-linecap="round"/>
 
         <!-- base shell -->
-        <rect x="180" y="666" width="260" height="96" rx="43" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
-        <rect x="160" y="692" width="24" height="32" rx="6" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
-        <rect x="416" y="692" width="24" height="32" rx="6" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="2"/>
-        <circle cx="310" cy="714" r="24" fill="var(--ground)" stroke="var(--deep)" stroke-width="2"/>
-        <circle cx="310" cy="714" r="8" fill="none" stroke="var(--trace)" stroke-width="1.5"/>
-        <line x1="440" y1="714" x2="560" y2="714" stroke="var(--ink-3)" stroke-width="1" stroke-dasharray="3 4"/>
-        <text class="dg-label" x="570" y="710">BASE SHELL</text>
-        <text class="dg-sub" x="570" y="728">Optical window, worn against skin</text>
+        <rect x="260" y="150" width="170" height="120" rx="40" fill="url(#shellBase)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="345" cy="210" r="22" fill="var(--ground)" stroke="var(--deep)" stroke-width="2"/>
+        <circle cx="345" cy="210" r="7" fill="none" stroke="var(--trace)" stroke-width="1.5"/>
+
+        <!-- board -->
+        <rect x="470" y="160" width="170" height="100" rx="8" fill="url(#pcbGrad)" stroke="var(--ink)" stroke-width="2"/>
+        <circle cx="486" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="506" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="526" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="546" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="566" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="586" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="606" cy="168" r="3" fill="var(--deep)"/>
+        <circle cx="626" cy="168" r="3" fill="var(--deep)"/>
+        <rect x="486" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
+        <rect x="582" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
+        <circle cx="555" cy="232" r="13" fill="none" stroke="var(--trace)" stroke-width="2"/>
+        <circle cx="555" cy="232" r="4" fill="var(--trace)"/>
+
+        <!-- top shell -->
+        <rect x="690" y="150" width="170" height="120" rx="40" fill="url(#shellTop)" stroke="var(--ink)" stroke-width="2"/>
+        <path d="M 710 165 C 740 155 780 152 815 158" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.18"/>
+
+        <!-- floor glow -->
+        <ellipse cx="112" cy="352" rx="72" ry="12" fill="url(#floorGlow)"/>
+        <ellipse cx="345" cy="292" rx="88" ry="13" fill="url(#floorGlow)"/>
+        <ellipse cx="555" cy="282" rx="88" ry="13" fill="url(#floorGlow)"/>
+        <ellipse cx="775" cy="292" rx="88" ry="13" fill="url(#floorGlow)"/>
+
+        <!-- captions -->
+        <text class="dg-label" x="112" y="386" text-anchor="middle">STRAP</text>
+        <text class="dg-sub" x="112" y="404" text-anchor="middle">Silicone, snaps to pod</text>
+
+        <text class="dg-label" x="345" y="326" text-anchor="middle">BASE SHELL</text>
+        <text class="dg-sub" x="345" y="344" text-anchor="middle">Optical window, worn against skin</text>
+
+        <text class="dg-label" x="555" y="316" text-anchor="middle">MAIN BOARD</text>
+        <text class="dg-sub" x="555" y="334" text-anchor="middle">PPG capture · BLE · battery</text>
+
+        <text class="dg-label" x="775" y="326" text-anchor="middle">TOP SHELL</text>
+        <text class="dg-sub" x="775" y="344" text-anchor="middle">Injection-moulded</text>
       </svg>
-      <p class="dg-cap">The board that runs the wrist pod: two QFP controllers, a BGA sensor-front-end IC, a diode, the optical PPG module, and a regulator — sandwiched between a top shell and a base shell with a window aligned straight to the sensor.</p>
+      <p class="dg-cap">Four parts, one pod: a silicone strap, a base shell whose window sits directly over the board's optical module, the board itself, and a top shell.</p>
     </div>
 
     <div class="feat">
       <div><h3>Reflectance mode</h3><p>Light enters the tissue and returns through the same window — three wavelengths, 940 nm infrared penetrating deepest.</p></div>
       <div><h3>One board, one job</h3><p>The wrist pod's controller handles PPG capture and timing sync with the earlobe clip over the shared hardware clock.</p></div>
-      <div><h3>Ear clip — coming soon</h3><p>The transmission-mode earlobe design will be added here alongside the wrist pod.</p></div>
+      <div><h3>Ear clip — coming soon</h3><p>The transmission-mode earlobe design, in the same exploded style, will be added here.</p></div>
     </div>
   </div>
 </section>
