@@ -34,9 +34,12 @@
       if(x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     }
     ctx.strokeStyle = css('--trace');
-    ctx.lineWidth = 1.6;
+    ctx.lineWidth = 2.2;
     ctx.lineJoin = 'round';
+    ctx.shadowColor = css('--trace');
+    ctx.shadowBlur = 16;
     ctx.stroke();
+    ctx.shadowBlur = 0;
 
     // fade the leading edge so the trace enters rather than starting abruptly
     var g = ctx.createLinearGradient(0, 0, w * 0.22, 0);
