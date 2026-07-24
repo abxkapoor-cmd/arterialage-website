@@ -142,74 +142,92 @@
     <p class="lede" style="margin-top:20px">Strap, base shell, board, top shell — the wrist pod is four parts. The base shell's window sits directly over the board's optical module, against the skin.</p>
 
     <div class="diagram">
-      <svg viewBox="0 0 920 460" role="img" aria-labelledby="hwtitle hwdesc">
+      <svg viewBox="0 0 920 480" role="img" aria-labelledby="hwtitle hwdesc">
         <title id="hwtitle">Vascora Health wrist pod hardware, exploded</title>
-        <desc id="hwdesc">An exploded product view of the wrist pod in four parts, left to right: a silicone strap, a base shell with an optical window, the main circuit board, and a top shell.</desc>
+        <desc id="hwdesc">A studio-style exploded product view of the wrist pod in four parts, left to right: a silicone strap, a base shell with an optical window, the main circuit board, and a top shell, rendered as glossy plastic and a real circuit board on a light background.</desc>
         <defs>
-          <linearGradient id="shellTop" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#96A1B4"/>
-            <stop offset="1" stop-color="#4A5468"/>
+          <linearGradient id="stageBg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F4F5F7"/>
+            <stop offset="1" stop-color="#E3E5EA"/>
           </linearGradient>
-          <linearGradient id="shellBase" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#69748A"/>
-            <stop offset="1" stop-color="#2B3240"/>
-          </linearGradient>
-          <linearGradient id="pcbGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#25352B"/>
-            <stop offset="1" stop-color="#121C16"/>
-          </linearGradient>
-          <radialGradient id="floorGlow" cx="0.5" cy="0.5" r="0.5">
-            <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.14"/>
-            <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+          <radialGradient id="shellRadA" cx="32%" cy="26%" r="85%">
+            <stop offset="0" stop-color="#C3CAD8"/>
+            <stop offset="0.45" stop-color="#8992A6"/>
+            <stop offset="1" stop-color="#3E4658"/>
           </radialGradient>
+          <radialGradient id="shellRadB" cx="32%" cy="26%" r="85%">
+            <stop offset="0" stop-color="#A9B1C2"/>
+            <stop offset="0.45" stop-color="#6D7688"/>
+            <stop offset="1" stop-color="#2A303C"/>
+          </radialGradient>
+          <linearGradient id="pcbGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2C4433"/>
+            <stop offset="1" stop-color="#152018"/>
+          </linearGradient>
+          <filter id="softShadow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="7"/>
+          </filter>
         </defs>
 
-        <!-- strap -->
-        <path d="M 170 90 C 90 90 55 150 55 210 C 55 270 90 330 170 330" fill="none" stroke="var(--ink)" stroke-width="40" stroke-linecap="round"/>
-        <path d="M 170 90 C 90 90 55 150 55 210 C 55 270 90 330 170 330" fill="none" stroke="url(#shellBase)" stroke-width="34" stroke-linecap="round"/>
+        <rect x="10" y="10" width="900" height="440" rx="26" fill="url(#stageBg)"/>
+
+        <!-- shadows -->
+        <ellipse cx="122" cy="368" rx="80" ry="14" fill="#1A1E24" opacity="0.28" filter="url(#softShadow)"/>
+        <ellipse cx="355" cy="308" rx="92" ry="14" fill="#1A1E24" opacity="0.28" filter="url(#softShadow)"/>
+        <ellipse cx="565" cy="298" rx="92" ry="14" fill="#1A1E24" opacity="0.24" filter="url(#softShadow)"/>
+        <ellipse cx="785" cy="308" rx="92" ry="14" fill="#1A1E24" opacity="0.28" filter="url(#softShadow)"/>
+
+        <!-- strap: filled crescent -->
+        <path d="M 185 95 C 95 95 58 155 58 220 C 58 285 95 345 185 345 L 185 305 C 128 305 98 265 98 220 C 98 175 128 135 185 135 Z"
+              fill="url(#shellRadB)" stroke="#20242C" stroke-width="2"/>
+        <path d="M 172 108 C 118 112 90 150 82 195" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
 
         <!-- base shell -->
-        <rect x="260" y="150" width="170" height="120" rx="40" fill="url(#shellBase)" stroke="var(--ink)" stroke-width="2"/>
-        <circle cx="345" cy="210" r="22" fill="var(--ground)" stroke="var(--deep)" stroke-width="2"/>
-        <circle cx="345" cy="210" r="7" fill="none" stroke="var(--trace)" stroke-width="1.5"/>
+        <rect x="270" y="160" width="170" height="120" rx="40" fill="url(#shellRadB)" stroke="#20242C" stroke-width="2"/>
+        <path d="M 288 178 C 320 168 360 165 400 170" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.3"/>
+        <circle cx="355" cy="222" r="22" fill="#EDEEF0" stroke="#1B2430" stroke-width="2"/>
+        <circle cx="355" cy="222" r="22" fill="none" stroke="#0F1620" stroke-width="1" opacity="0.4"/>
+        <circle cx="355" cy="222" r="7" fill="none" stroke="var(--trace)" stroke-width="2"/>
+        <circle cx="355" cy="222" r="2.4" fill="var(--trace)"/>
 
         <!-- board -->
-        <rect x="470" y="160" width="170" height="100" rx="8" fill="url(#pcbGrad)" stroke="var(--ink)" stroke-width="2"/>
-        <circle cx="486" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="506" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="526" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="546" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="566" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="586" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="606" cy="168" r="3" fill="var(--deep)"/>
-        <circle cx="626" cy="168" r="3" fill="var(--deep)"/>
-        <rect x="486" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
-        <rect x="582" y="184" width="42" height="30" fill="none" stroke="var(--ink-2)" stroke-width="1"/>
-        <circle cx="555" cy="232" r="13" fill="none" stroke="var(--trace)" stroke-width="2"/>
-        <circle cx="555" cy="232" r="4" fill="var(--trace)"/>
+        <rect x="480" y="172" width="168" height="96" rx="6" fill="url(#pcbGrad)" stroke="#0C1410" stroke-width="2"/>
+        <rect x="648" y="200" width="20" height="40" rx="3" fill="#B9BCC0" stroke="#4A4D50" stroke-width="1"/>
+        <circle cx="497" cy="181" r="2.6" fill="#C9A227"/>
+        <circle cx="516" cy="181" r="2.6" fill="#C9A227"/>
+        <circle cx="535" cy="181" r="2.6" fill="#C9A227"/>
+        <circle cx="554" cy="181" r="2.6" fill="#C9A227"/>
+        <circle cx="573" cy="181" r="2.6" fill="#C9A227"/>
+        <circle cx="592" cy="181" r="2.6" fill="#C9A227"/>
+        <circle cx="611" cy="181" r="2.6" fill="#C9A227"/>
+        <circle cx="630" cy="181" r="2.6" fill="#C9A227"/>
+        <rect x="494" y="196" width="40" height="28" rx="2" fill="#12140F" stroke="#050603" stroke-width="1"/>
+        <rect x="590" y="196" width="40" height="28" rx="2" fill="#12140F" stroke="#050603" stroke-width="1"/>
+        <rect x="504" y="204" width="6" height="12" fill="#8A8F95"/>
+        <rect x="516" y="204" width="6" height="12" fill="#8A8F95"/>
+        <rect x="600" y="204" width="6" height="12" fill="#8A8F95"/>
+        <rect x="612" y="204" width="6" height="12" fill="#8A8F95"/>
+        <circle cx="563" cy="246" r="13" fill="#0B120D" stroke="#3A4A3F" stroke-width="1.5"/>
+        <circle cx="563" cy="246" r="6" fill="var(--trace)" opacity="0.9"/>
+        <rect x="498" y="240" width="10" height="6" fill="#7A6A3A"/>
+        <rect x="514" y="240" width="10" height="6" fill="#7A6A3A"/>
 
         <!-- top shell -->
-        <rect x="690" y="150" width="170" height="120" rx="40" fill="url(#shellTop)" stroke="var(--ink)" stroke-width="2"/>
-        <path d="M 710 165 C 740 155 780 152 815 158" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.18"/>
-
-        <!-- floor glow -->
-        <ellipse cx="112" cy="352" rx="72" ry="12" fill="url(#floorGlow)"/>
-        <ellipse cx="345" cy="292" rx="88" ry="13" fill="url(#floorGlow)"/>
-        <ellipse cx="555" cy="282" rx="88" ry="13" fill="url(#floorGlow)"/>
-        <ellipse cx="775" cy="292" rx="88" ry="13" fill="url(#floorGlow)"/>
+        <rect x="700" y="160" width="170" height="120" rx="40" fill="url(#shellRadA)" stroke="#20242C" stroke-width="2"/>
+        <path d="M 718 176 C 750 164 795 160 832 166" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.4"/>
 
         <!-- captions -->
-        <text class="dg-label" x="112" y="386" text-anchor="middle">STRAP</text>
-        <text class="dg-sub" x="112" y="404" text-anchor="middle">Silicone, snaps to pod</text>
+        <text x="122" y="398" text-anchor="middle" style="font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.12em" fill="#232A36">STRAP</text>
+        <text x="122" y="416" text-anchor="middle" style="font-family:var(--mono);font-size:11.5px;letter-spacing:.06em" fill="#6B7484">Silicone, snaps to pod</text>
 
-        <text class="dg-label" x="345" y="326" text-anchor="middle">BASE SHELL</text>
-        <text class="dg-sub" x="345" y="344" text-anchor="middle">Optical window, worn against skin</text>
+        <text x="355" y="340" text-anchor="middle" style="font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.12em" fill="#232A36">BASE SHELL</text>
+        <text x="355" y="358" text-anchor="middle" style="font-family:var(--mono);font-size:11.5px;letter-spacing:.06em" fill="#6B7484">Optical window, worn against skin</text>
 
-        <text class="dg-label" x="555" y="316" text-anchor="middle">MAIN BOARD</text>
-        <text class="dg-sub" x="555" y="334" text-anchor="middle">PPG capture · BLE · battery</text>
+        <text x="565" y="330" text-anchor="middle" style="font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.12em" fill="#232A36">MAIN BOARD</text>
+        <text x="565" y="348" text-anchor="middle" style="font-family:var(--mono);font-size:11.5px;letter-spacing:.06em" fill="#6B7484">PPG capture · BLE · battery</text>
 
-        <text class="dg-label" x="775" y="326" text-anchor="middle">TOP SHELL</text>
-        <text class="dg-sub" x="775" y="344" text-anchor="middle">Injection-moulded</text>
+        <text x="785" y="340" text-anchor="middle" style="font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.12em" fill="#232A36">TOP SHELL</text>
+        <text x="785" y="358" text-anchor="middle" style="font-family:var(--mono);font-size:11.5px;letter-spacing:.06em" fill="#6B7484">Injection-moulded</text>
       </svg>
       <p class="dg-cap">Four parts, one pod: a silicone strap, a base shell whose window sits directly over the board's optical module, the board itself, and a top shell.</p>
     </div>
